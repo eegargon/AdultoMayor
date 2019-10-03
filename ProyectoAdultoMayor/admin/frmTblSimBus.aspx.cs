@@ -163,7 +163,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblSimBus.aspx");
+            Response.Redirect("~/admin/frmTblSimBus.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

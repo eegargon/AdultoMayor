@@ -99,7 +99,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblAsociacion.aspx");
+            Response.Redirect("~/admin/frmTblAsociacion.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

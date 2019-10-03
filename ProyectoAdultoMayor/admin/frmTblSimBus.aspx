@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdultoMayor.Master" AutoEventWireup="true" CodeBehind="frmTblSimBusBus.aspx.cs" Inherits="ProyectoAdultoMayor.frmTblSimBus" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdultoMayor.Master" AutoEventWireup="true" CodeBehind="frmTblSimBus.aspx.cs" Inherits="ProyectoAdultoMayor.frmTblSimBus" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="titulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmTblSimBus.aspx">Gesti&oacute;n de Buses Por SIM</a></li>
                 <li class="active">Gestionar SIM</li>
             </ol>
@@ -44,7 +44,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmTblSimBus.aspx">Gesti&oacute;n de SIM</a></li>
             <li class="active">Agregar SIM</li>
         </ol>
@@ -86,7 +86,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de SIM</li>
         </ol>
         <div class="panel panel-primary">

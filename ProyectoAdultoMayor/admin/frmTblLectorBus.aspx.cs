@@ -157,7 +157,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblLectorBus.aspx");
+            Response.Redirect("~/admin/frmTblLectorBus.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

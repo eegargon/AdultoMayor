@@ -119,7 +119,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblTablet.aspx");
+            Response.Redirect("~/admin/frmTblTablet.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmTblBuses.aspx">GESTI&Oacute;N DE BUSES</a></li>
                 <li class="active">GESTIONAR BUSES</li>
             </ol>
@@ -170,7 +170,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmTblBuses.aspx">GESTI&Oacute;N DE BUSES</a></li>
             <li class="active">AGREGAR BUSES</li>
         </ol>
@@ -397,7 +397,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">GESTI&Oacute;N DE BUSES</li>
         </ol>
         <div class="panel panel-primary">

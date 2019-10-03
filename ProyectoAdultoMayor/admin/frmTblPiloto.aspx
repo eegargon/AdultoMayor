@@ -9,8 +9,8 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
-                <li><a href="frmTblPiloto.aspx">Gesti&oacute;n de Pilotos</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
+                <li><a href="/admin/frmTblPiloto.aspx">Gesti&oacute;n de Pilotos</a></li>
                 <li class="active">Gesti&oacute;n del Piloto</li>
             </ol>
             <div class="panel panel-primary">
@@ -50,8 +50,8 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
-            <li><a href="frmTblPiloto.aspx">Gesti&oacute;n de Pilotos</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
+            <li><a href="/admin/frmTblPiloto.aspx">Gesti&oacute;n de Pilotos</a></li>
             <li class="active">Agregar Piloto</li>
         </ol>
         <div class="panel panel-primary">
@@ -100,16 +100,16 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de Pilotos</li>
         </ol>
         <div class="panel panel-primary">
             <div class ="panel panel-heading">Gesti&oacute;n de Pilotos</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblPiloto.aspx?cmd=add" class="btn btn-success">Agregar Piloto</a>
+                    <a href="/admin/frmTblPiloto.aspx?cmd=add" class="btn btn-success">Agregar Piloto</a>
                 </p>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="cui" HeaderText="CUI" />
                         <asp:BoundField DataField="nombre" HeaderText="NOMBRE" />

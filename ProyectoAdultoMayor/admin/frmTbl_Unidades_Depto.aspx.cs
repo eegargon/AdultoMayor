@@ -116,7 +116,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTbl_Unidades_Depto.aspx");
+            Response.Redirect("~/admin/frmTbl_Unidades_Depto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

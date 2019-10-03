@@ -117,7 +117,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmproducto.aspx");
+            Response.Redirect("~/admin/frmproducto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

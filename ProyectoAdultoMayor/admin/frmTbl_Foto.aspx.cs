@@ -143,7 +143,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTbl_Foto.aspx");
+            Response.Redirect("~/admin/frmTbl_Foto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

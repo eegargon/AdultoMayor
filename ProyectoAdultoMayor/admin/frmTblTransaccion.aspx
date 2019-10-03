@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
                 <li class="active">Gestionar Transaccion</li>
             </ol>
@@ -74,7 +74,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
             <li class="active">Agregar Transaccion</li>
         </ol>
@@ -148,7 +148,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de Transaccion</li>
         </ol>
         <div class="panel panel-primary">

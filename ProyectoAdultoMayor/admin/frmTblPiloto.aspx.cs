@@ -54,7 +54,7 @@ namespace ProyectoAdultoMayor
 
             string CUI = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblPiloto.aspx?cmd=edit&cui=" + CUI);
+            Response.Redirect("~/admin/frmTblPiloto.aspx?cmd=edit&cui=" + CUI);
         }
 
         protected void btnModificarPiloto_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblPiloto.aspx");
+            Response.Redirect("~/admin/frmTblPiloto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -191,5 +191,9 @@ namespace ProyectoAdultoMayor
             return esNumerico;
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

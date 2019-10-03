@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
                 <li class="active">Gestionar Propietario</li>
             </ol>
@@ -50,7 +50,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
             <li class="active">Agregar Propietario</li>
         </ol>
@@ -100,7 +100,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de Propietarios</li>
         </ol>
         <div class="panel panel-primary">
@@ -109,7 +109,7 @@
                 <p>
                     <a href="frmTblPropietario.aspx?cmd=add" class="btn btn-success">Agregar Propietario</a>
                 </p>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="cui" HeaderText="CUI" />
                         <asp:BoundField DataField="nombre" HeaderText="NOMBRE" />

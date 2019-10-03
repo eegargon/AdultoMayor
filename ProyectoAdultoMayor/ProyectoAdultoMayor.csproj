@@ -92,6 +92,7 @@
     <Content Include="admin\frmTblUser.aspx" />
     <Content Include="admin\frmTbl_Foto.aspx" />
     <Content Include="admin\frmTbl_Unidades_Depto.aspx" />
+    <Content Include="admin\frmusers.aspx" />
     <Content Include="Global.asax" />
     <Content Include="thirdparties\twitterbootstrap\css\bootstrap-theme.css" />
     <Content Include="thirdparties\twitterbootstrap\css\bootstrap-theme.min.css" />
@@ -282,6 +283,13 @@
     </Compile>
     <Compile Include="admin\frmTbl_Unidades_Depto.aspx.designer.cs">
       <DependentUpon>frmTbl_Unidades_Depto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmusers.aspx.cs">
+      <DependentUpon>frmusers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmusers.aspx.designer.cs">
+      <DependentUpon>frmusers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

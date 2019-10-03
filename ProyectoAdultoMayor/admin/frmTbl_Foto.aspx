@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp; </li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp; </li>
                 <li><a href="frmTbl_Foto.aspx">Gesti&oacute;n de Foto</a>&nbsp;&nbsp;&nbsp; </li>
                 <li class="active">&nbsp;&nbsp;&nbsp;&nbsp; Gestionar Fotos</li>
             </ol>
@@ -55,7 +55,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
             <li><a href="frmTbl_Foto.aspx">Gesti&oacute;n de Fotos</a></li>
             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
             <li class="active">Agregar Foto</li>
@@ -103,7 +103,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
             <li class="active">Gesti&oacute;n de Foto</li>
         </ol>
         <div class="panel panel-primary">

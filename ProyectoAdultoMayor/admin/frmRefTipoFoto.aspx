@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
                 <li class="active">Gestionar Tipo de Foto</li>
             </ol>
@@ -42,7 +42,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
             <li class="active">Agregar Tipo de Foto</li>
         </ol>
@@ -83,7 +83,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de Tipo de Foto</li>
         </ol>
         <div class="panel panel-primary">

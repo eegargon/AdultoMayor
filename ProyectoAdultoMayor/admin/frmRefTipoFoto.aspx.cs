@@ -99,7 +99,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmRefTipoFoto.aspx");
+            Response.Redirect("~/admin/frmRefTipoFoto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

@@ -9,7 +9,7 @@
         <% if (Request.QueryString["cmd"] == "edit")
             { %>
             <ol class="breadcrumb">
-                <li><a href="default.aspx">Inicio</a></li>
+                <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
                 <li><a href="frmRefDeptos.aspx">Gesti&oacute;n de Departamentos</a></li>
                 <li class="active">Gestionar Departamentos</li>
             </ol>
@@ -46,7 +46,7 @@
             </div>
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li><a href="frmRefDeptos.aspx">Gesti&oacute;n de Departamentos</a></li>
             <li class="active">Agregar Departamento</li>
         </ol>
@@ -93,7 +93,7 @@
         </div>
         <% } else { %>
         <ol class="breadcrumb">
-            <li><a href="default.aspx">Inicio</a></li>
+            <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
             <li class="active">Gesti&oacute;n de Departamentos</li>
         </ol>
         <div class="panel panel-primary">

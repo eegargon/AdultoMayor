@@ -103,7 +103,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmRefDeptos.aspx");
+            Response.Redirect("~/admin/frmRefDeptos.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {

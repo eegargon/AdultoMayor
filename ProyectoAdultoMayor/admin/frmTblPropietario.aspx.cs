@@ -107,7 +107,7 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/frmTblPropietario.aspx");
+            Response.Redirect("~/admin/frmTblPropietario.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -191,5 +191,9 @@ namespace ProyectoAdultoMayor
             return esNumerico;
         }
 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
