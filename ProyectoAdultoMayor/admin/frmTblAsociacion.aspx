@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblAsociacion.aspx">Gesti&oacute;n de Asociaci&oacute;n</a></li>
+                <li><a href="/admin/frmTblAsociacion.aspx">Gesti&oacute;n de Asociaci&oacute;n</a></li>
                 <li class="active">Gestionar Asociaci&oacute;n</li>
             </ol>
             <div class="panel panel-primary">
@@ -43,7 +43,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblAsociacion.aspx">Gesti&oacute;n de Asociaci&oacute;n</a></li>
+            <li><a href="/admin/frmTblAsociacion.aspx">Gesti&oacute;n de Asociaci&oacute;n</a></li>
             <li class="active">Agregar Asociaci&oacute;n</li>
         </ol>
         <div class="panel panel-primary">
@@ -90,7 +90,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Asociaci&oacute;n</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblAsociacion.aspx?cmd=add" class="btn btn-success">Agregar Asociaci&oacute;n</a>
+                    <a href="/admin/frmTblAsociacion.aspx?cmd=add" class="btn btn-success">Agregar Asociaci&oacute;n</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

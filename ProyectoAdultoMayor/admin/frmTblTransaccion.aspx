@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
+                <li><a href="/admin/frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
                 <li class="active">Gestionar Transaccion</li>
             </ol>
             <div class="panel panel-primary">
@@ -75,7 +75,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
+            <li><a href="/admin/frmTblTransaccion.aspx">Gesti&oacute;n de Transaccion</a></li>
             <li class="active">Agregar Transaccion</li>
         </ol>
         <div class="panel panel-primary">
@@ -155,7 +155,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Transaccion</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblTransaccion.aspx?cmd=add" class="btn btn-success">Agregar Transaccion</a>
+                    <a href="/admin/frmTblTransaccion.aspx?cmd=add" class="btn btn-success">Agregar Transaccion</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

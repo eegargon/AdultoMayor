@@ -10,11 +10,11 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblSimBus.aspx">Gesti&oacute;n de Buses Por SIM</a></li>
-                <li class="active">Gestionar SIM</li>
+                <li><a href="/admin/frmTblSimBus.aspx">Gesti&oacute;n de Buses Por SIM</a></li>
+                <li class="active">Gestionar SIM BUS</li>
             </ol>
             <div class="panel panel-primary">
-                <div class="panel-heading">Modificar SIM</div>
+                <div class="panel-heading">Modificar SIM BUS</div>
                 <div class="panel panel-body">
                     <div class="row">
                     <div class="col-md-3"></div>                   
@@ -45,11 +45,11 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblSimBus.aspx">Gesti&oacute;n de SIM</a></li>
-            <li class="active">Agregar SIM</li>
+            <li><a href="/admin/frmTblSimBus.aspx">Gesti&oacute;n de SIM BUS</a></li>
+            <li class="active">Agregar SIM BUS</li>
         </ol>
         <div class="panel panel-primary">
-            <div class="panel-heading">Agregar SIM</div>
+            <div class="panel-heading">Agregar SIM BUS</div>
             <div class="panel panel-body">
                 <div class="row">
                     <div class="col-md-3"></div>
@@ -87,13 +87,13 @@
         <% } else { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li class="active">Gesti&oacute;n de SIM</li>
+            <li class="active">Gesti&oacute;n de SIM BUS</li>
         </ol>
         <div class="panel panel-primary">
-            <div class ="panel panel-heading">Gesti&oacute;n de SIM</div>
+            <div class ="panel panel-heading">Gesti&oacute;n de SIM BUS</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblSimBus.aspx?cmd=add" class="btn btn-success">Agregar SIM</a>
+                    <a href="/admin/frmTblSimBus.aspx?cmd=add" class="btn btn-success">Agregar SIM BUS</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

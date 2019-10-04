@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblUser.aspx">Gesti&oacute;n de Usuarios</a></li>
+                <li><a href="/admin/frmTblUser.aspx">Gesti&oacute;n de Usuarios</a></li>
                 <li class="active">GESTIONAR USUARIOS</li>
             </ol>
             <div class="panel panel-primary">
@@ -43,7 +43,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblUser.aspx">Gesti&oacute;n de Usuarios</a></li>
+            <li><a href="/admin/frmTblUser.aspx">Gesti&oacute;n de Usuarios</a></li>
             <li class="active">Agregar Usuario</li>
         </ol>
         <div class="panel panel-primary">
@@ -89,7 +89,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Usuarios</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblUser.aspx?cmd=add" class="btn btn-success">Agregar Usuario</a>
+                    <a href="/admin/frmTblUser.aspx?cmd=add" class="btn btn-success">Agregar Usuario</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

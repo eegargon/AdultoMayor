@@ -73,7 +73,7 @@ namespace ProyectoAdultoMayor
 
             string IdInfo = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblInfo.aspx?cmd=edit&IdInfo=" + IdInfo);
+            Response.Redirect("~/admin/frmTblInfo.aspx?cmd=edit&IdInfo=" + IdInfo);
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)

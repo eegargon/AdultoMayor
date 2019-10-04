@@ -57,7 +57,7 @@ namespace ProyectoAdultoMayor
 
             string Consola = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblTablet.aspx?cmd=edit&Consola=" + Consola);
+            Response.Redirect("~/admin/frmTblTablet.aspx?cmd=edit&Consola=" + Consola);
         }
 
         protected void btnModificarTablet_Click(object sender, EventArgs e)

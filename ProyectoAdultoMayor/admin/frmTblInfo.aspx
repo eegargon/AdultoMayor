@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblInfo.aspx">GESTI&Oacute;N DE INFORMACI&Oacute;N</a></li>
+                <li><a href="/admin/frmTblInfo.aspx">GESTI&Oacute;N DE INFORMACI&Oacute;N</a></li>
                 <li class="active">GESTIONAR INFORMACI&Oacute;N</li>
             </ol>
             <div class="panel panel-primary">
@@ -79,7 +79,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblInfo.aspx">GESTI&Oacute;N DE INFORMACI&Oacute;N </a></li>
+            <li><a href="/admin/frmTblInfo.aspx">GESTI&Oacute;N DE INFORMACI&Oacute;N </a></li>
             <li class="active">AGREGAR INFORMACI&Oacute;N</li>
         </ol>
         <div class="panel panel-primary">
@@ -174,7 +174,7 @@
             <div class ="panel panel-heading">GESTI&Oacute;N DE INFORMACI&Oacute;N</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblInfo.aspx?cmd=add" class="btn btn-success">AGREGAR INFORMACI&Oacute;N</a>
+                    <a href="/admin/frmTblInfo.aspx?cmd=add" class="btn btn-success">AGREGAR INFORMACI&Oacute;N</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>

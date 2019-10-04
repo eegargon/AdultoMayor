@@ -55,7 +55,7 @@ namespace ProyectoAdultoMayor
 
             string Cod = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTbl_Unidades_Depto.aspx?cmd=edit&Cod=" + Cod);
+            Response.Redirect("~/admin/frmTbl_Unidades_Depto.aspx?cmd=edit&Cod=" + Cod);
         }
 
         protected void btnModificarUnidadesDepto_Click(object sender, EventArgs e)

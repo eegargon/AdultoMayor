@@ -73,7 +73,7 @@ namespace ProyectoAdultoMayor
 
             string IdPurga = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblPurga.aspx?cmd=edit&IdPurga=" + IdPurga);
+            Response.Redirect("~/admin/frmTblPurga.aspx?cmd=edit&IdPurga=" + IdPurga);
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTbl_Unidades_Depto.aspx">Gesti&oacute;n de Unidades por departamento</a></li>
+                <li><a href="/admin/frmTbl_Unidades_Depto.aspx">Gesti&oacute;n de Unidades por departamento</a></li>
                 <li class="active">Gestionar Unidades por departamento</li>
             </ol>
             <div class="panel panel-primary">
@@ -59,7 +59,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTbl_Unidades_Depto.aspx">Gesti&oacute;n de Unidades por departamento</a></li>
+            <li><a href="/admin/frmTbl_Unidades_Depto.aspx">Gesti&oacute;n de Unidades por departamento</a></li>
             <li class="active">Agregar Unidades por departamento</li>
         </ol>
         <div class="panel panel-primary">
@@ -122,7 +122,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Unidades por departamento</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTbl_Unidades_Depto.aspx?cmd=add" class="btn btn-success">AGREGAR A UNIDADES POR DEPARTAMENTO</a>
+                    <a href="/admin/frmTbl_Unidades_Depto.aspx?cmd=add" class="btn btn-success">AGREGAR A UNIDADES POR DEPARTAMENTO</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

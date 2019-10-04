@@ -52,7 +52,7 @@ namespace ProyectoAdultoMayor
 
             string Asociacion = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblAsociacion.aspx?cmd=edit&Asociacion=" + Asociacion);
+            Response.Redirect("~/admin/frmTblAsociacion.aspx?cmd=edit&Asociacion=" + Asociacion);
         }
 
         protected void btnModificarAsociacion_Click(object sender, EventArgs e)

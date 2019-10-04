@@ -88,7 +88,7 @@ namespace ProyectoAdultoMayor
 
             string IdFoto = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTbl_Foto.aspx?cmd=edit&IdFoto=" + IdFoto);
+            Response.Redirect("~/admin/frmTbl_Foto.aspx?cmd=edit&IdFoto=" + IdFoto);
         }
 
         protected void btnModificarIdFoto_Click(object sender, EventArgs e)

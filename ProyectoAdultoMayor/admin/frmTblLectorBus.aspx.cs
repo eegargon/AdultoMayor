@@ -107,7 +107,7 @@ namespace ProyectoAdultoMayor
             string Lector = row.Cells[0].Text;
             string Unidad = row.Cells[1].Text;
 
-            Response.Redirect("~/frmTblLectorBus.aspx?cmd=edit&Lector=" + Lector + "&Unidad=" + Unidad);
+            Response.Redirect("~/admin/frmTblLectorBus.aspx?cmd=edit&Lector=" + Lector + "&Unidad=" + Unidad);
         }
 
         protected void btnModificarSIM_Click(object sender, EventArgs e)

@@ -54,7 +54,7 @@ namespace ProyectoAdultoMayor
 
             string Ruta = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblRuta.aspx?cmd=edit&Ruta=" + Ruta);
+            Response.Redirect("~/admin/frmTblRuta.aspx?cmd=edit&Ruta=" + Ruta);
         }
 
         protected void btnModificarRuta_Click(object sender, EventArgs e)

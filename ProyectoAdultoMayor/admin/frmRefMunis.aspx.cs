@@ -95,7 +95,7 @@ namespace ProyectoAdultoMayor
             string MUNICIPALITYCODE = row.Cells[0].Text;
             string departmentcode = row.Cells[1].Text;
 
-            Response.Redirect("~/frmRefMunis.aspx?cmd=edit&MUNICIPALITYCODE=" + MUNICIPALITYCODE + "departmentcode=" + departmentcode);
+            Response.Redirect("~/admin/frmRefMunis.aspx?cmd=edit&MUNICIPALITYCODE=" + MUNICIPALITYCODE + "departmentcode=" + departmentcode);
         }
 
         protected void btnModificarMunicipio_Click(object sender, EventArgs e)

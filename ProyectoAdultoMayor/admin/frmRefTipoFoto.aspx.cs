@@ -52,7 +52,7 @@ namespace ProyectoAdultoMayor
 
             string CodTipoFoto = row.Cells[0].Text;
 
-            Response.Redirect("~/frmRefTipoFoto.aspx?cmd=edit&CodTipoFoto=" + CodTipoFoto);
+            Response.Redirect("~/admin/frmRefTipoFoto.aspx?cmd=edit&CodTipoFoto=" + CodTipoFoto);
         }
 
         protected void btnModificarCodTipoFoto_Click(object sender, EventArgs e)

@@ -75,7 +75,7 @@ namespace ProyectoAdultoMayor
             DateTime FechaAbordaje = DateTime.ParseExact(strFechaAbordaje, "yyyy-MM-dd HH:mm:ss",
                                        System.Globalization.CultureInfo.InvariantCulture);
 
-            Response.Redirect("~/frmTblTransaccion.aspx?cmd=edit&NoUnidad=" + NoUnidad + "&FechaAbordaje=" + FechaAbordaje);
+            Response.Redirect("~/admin/frmTblTransaccion.aspx?cmd=edit&NoUnidad=" + NoUnidad + "&FechaAbordaje=" + FechaAbordaje);
         }
 
         protected void btnModificarTransaccion_Click(object sender, EventArgs e)

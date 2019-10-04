@@ -115,7 +115,7 @@ namespace ProyectoAdultoMayor
             string SIM = row.Cells[0].Text;
             string Unidad = row.Cells[1].Text;
 
-            Response.Redirect("~/frmTblSimBus.aspx?cmd=edit&SIM=" + SIM + "&Unidad=" + Unidad);
+            Response.Redirect("~/admin/frmTblSimBus.aspx?cmd=edit&SIM=" + SIM + "&Unidad=" + Unidad);
         }
 
         protected void btnModificarSIM_Click(object sender, EventArgs e)

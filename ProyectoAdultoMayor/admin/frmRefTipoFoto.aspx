@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
+                <li><a href="/admin/frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
                 <li class="active">Gestionar Tipo de Foto</li>
             </ol>
             <div class="panel panel-primary">
@@ -43,7 +43,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
+            <li><a href="/admin/frmRefTipoFoto.aspx">Gesti&oacute;n de Tipo de Foto</a></li>
             <li class="active">Agregar Tipo de Foto</li>
         </ol>
         <div class="panel panel-primary">
@@ -90,7 +90,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Tipo de Foto</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmRefTipoFoto.aspx?cmd=add" class="btn btn-success">Agregar Tipo de Foto</a>
+                    <a href="/admin/frmRefTipoFoto.aspx?cmd=add" class="btn btn-success">Agregar Tipo de Foto</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

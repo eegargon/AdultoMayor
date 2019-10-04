@@ -107,7 +107,7 @@ namespace ProyectoAdultoMayor
             string Consola = row.Cells[0].Text;
             string Unidad = row.Cells[1].Text;
 
-            Response.Redirect("~/frmTblTabletBus.aspx?cmd=edit&Consola=" + Consola + "&Unidad=" + Unidad);
+            Response.Redirect("~/admin/frmTblTabletBus.aspx?cmd=edit&Consola=" + Consola + "&Unidad=" + Unidad);
         }
 
         protected void btnModificarSIM_Click(object sender, EventArgs e)

@@ -54,7 +54,7 @@ namespace ProyectoAdultoMayor
 
             string CUI = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblPropietario.aspx?cmd=edit&cui=" + CUI);
+            Response.Redirect("~/admin/frmTblPropietario.aspx?cmd=edit&cui=" + CUI);
         }
 
         protected void btnModificarPropietario_Click(object sender, EventArgs e)

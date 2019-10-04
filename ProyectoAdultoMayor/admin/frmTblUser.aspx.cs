@@ -55,7 +55,7 @@ namespace ProyectoAdultoMayor
 
             string Username = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblUser.aspx?cmd=edit&Username=" + Username);
+            Response.Redirect("~/admin/frmTblUser.aspx?cmd=edit&Username=" + Username);
         }
 
         protected void btnModificarIdUser_Click(object sender, EventArgs e)

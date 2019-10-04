@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp; </li>
-                <li><a href="frmTbl_Foto.aspx">Gesti&oacute;n de Foto</a>&nbsp;&nbsp;&nbsp; </li>
+                <li><a href="/admin/frmTbl_Foto.aspx">Gesti&oacute;n de Foto</a>&nbsp;&nbsp;&nbsp; </li>
                 <li class="active">&nbsp;&nbsp;&nbsp;&nbsp; Gestionar Fotos</li>
             </ol>
             <div class="panel panel-primary">
@@ -56,7 +56,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
-            <li><a href="frmTbl_Foto.aspx">Gesti&oacute;n de Fotos</a></li>
+            <li><a href="/admin/frmTbl_Foto.aspx">Gesti&oacute;n de Fotos</a></li>
             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li>
             <li class="active">Agregar Foto</li>
         </ol>
@@ -110,7 +110,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Foto</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTbl_Foto.aspx?cmd=add" class="btn btn-success">Agregar Foto</a>
+                    <a href="/admin/frmTbl_Foto.aspx?cmd=add" class="btn btn-success">Agregar Foto</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>

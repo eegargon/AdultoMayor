@@ -55,7 +55,7 @@ namespace ProyectoAdultoMayor
 
             string idproducto = row.Cells[0].Text;
 
-            Response.Redirect("~/frmproducto.aspx?cmd=edit&idproducto=" + idproducto);
+            Response.Redirect("~/admin/frmproducto.aspx?cmd=edit&idproducto=" + idproducto);
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)

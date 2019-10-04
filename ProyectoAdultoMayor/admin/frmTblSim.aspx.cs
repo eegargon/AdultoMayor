@@ -58,7 +58,7 @@ namespace ProyectoAdultoMayor
 
             string SIM = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblSim.aspx?cmd=edit&SIM=" + SIM);
+            Response.Redirect("~/admin/frmTblSim.aspx?cmd=edit&SIM=" + SIM);
         }
 
         protected void btnModificarSIM_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@
             { %>
             <ol class="breadcrumb">
                 <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-                <li><a href="frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
+                <li><a href="/admin/frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
                 <li class="active">Gestionar Propietario</li>
             </ol>
             <div class="panel panel-primary">
@@ -51,7 +51,7 @@
         <% } else if (Request.QueryString["cmd"] == "add") { %>
         <ol class="breadcrumb">
             <li><a href="/admin/frmInicio.aspx">Inicio</a></li>
-            <li><a href="frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
+            <li><a href="/admin/frmTblPropietario.aspx">Gesti&oacute;n de Propietarios</a></li>
             <li class="active">Agregar Propietario</li>
         </ol>
         <div class="panel panel-primary">
@@ -107,7 +107,7 @@
             <div class ="panel panel-heading">Gesti&oacute;n de Propietarios</div>
             <div class ="panel-body table-responsive">
                 <p>
-                    <a href="frmTblPropietario.aspx?cmd=add" class="btn btn-success">Agregar Propietario</a>
+                    <a href="/admin/frmTblPropietario.aspx?cmd=add" class="btn btn-success">Agregar Propietario</a>
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>

@@ -53,7 +53,7 @@ namespace ProyectoAdultoMayor
 
             string departmentcode = row.Cells[0].Text;
 
-            Response.Redirect("~/frmRefDeptos.aspx?cmd=edit&departmentcode=" + departmentcode);
+            Response.Redirect("~/admin/frmRefDeptos.aspx?cmd=edit&departmentcode=" + departmentcode);
         }
 
         protected void btnModificardepartmentcode_Click(object sender, EventArgs e)

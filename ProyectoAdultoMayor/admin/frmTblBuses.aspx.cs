@@ -213,7 +213,7 @@ namespace ProyectoAdultoMayor
 
             string NoUNidad = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblBuses.aspx?cmd=edit&NoUNidad=" + NoUNidad);
+            Response.Redirect("~/admin/frmTblBuses.aspx?cmd=edit&NoUNidad=" + NoUNidad);
         }
 
         protected void btnModificar_Click(object sender, EventArgs e)
