@@ -58,7 +58,7 @@ namespace ProyectoAdultoMayor
             Response.Redirect("~/admin/frmusers.aspx?cmd=edit&username=" + username);
         }
 
-        protected void btnModificarIdUser_Click(object sender, EventArgs e)
+        protected void btnModificar_Click(object sender, EventArgs e)
         {
             string username = (Request.Form["ctl00$contenido$txtusername"] != null) ? Request.Form["ctl00$contenido$txtusername"].ToString() : "";
             string password = (Request.Form["ctl00$contenido$txtpassword"] != null) ? Request.Form["ctl00$contenido$txtpassword"].ToString() : "";
@@ -69,13 +69,14 @@ namespace ProyectoAdultoMayor
                                     users
                                 SET 
                                     password=?,
-                                    roles                                    
+                                    roles=?                                    
                                 WHERE
                                     username=?
                                 ";
             cmd.Parameters.Add(new OdbcParameter("password", password));
-            cmd.Parameters.Add(new OdbcParameter("username", username));
             cmd.Parameters.Add(new OdbcParameter("roles", roles));
+            cmd.Parameters.Add(new OdbcParameter("username", username));
+            
 
             cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
             try

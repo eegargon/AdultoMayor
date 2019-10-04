@@ -34,7 +34,7 @@
                         <br />
                         <asp:Button ID="btnEliminar" runat="server" CommandArgument='<%# Eval("username") %>' Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" OnClientClick="return checkDelete()"/>
                         <asp:Button ID="btnCancelarEdit" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
-                        <asp:Button ID="btnModificarIdUser" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificarIdUser_Click" />
+                        <asp:Button ID="btnModificar" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificar_Click" />
                      </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtpasswordAdd" ErrorMessage="La contrasena del Usuario es obligatorio"></asp:RequiredFieldValidator>
                         <input type="text" class="form-control" id="txtpasswordAdd" runat="server" placeholder="Ingresar la contrasena del Usuario">
                         </div>         
-                        div class="form-group">
+                        <div class="form-group">
                         <label for="txtroles">Rol del Usuario</label>
                         &nbsp;
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtrolesAdd" ErrorMessage="El Rol del Usuario es obligatorio"></asp:RequiredFieldValidator>
