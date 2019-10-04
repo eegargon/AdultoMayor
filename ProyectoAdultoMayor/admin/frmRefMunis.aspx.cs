@@ -44,7 +44,7 @@ namespace ProyectoAdultoMayor
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtDepartmentCodeAdd.DataTextField = "departmentcode";
+            txtDepartmentCodeAdd.DataValueField = "departmentcode";
             txtDepartmentCodeAdd.DataTextField = "departmentname";
             txtDepartmentCodeAdd.DataSource = dt;
             txtDepartmentCodeAdd.DataBind();
@@ -53,19 +53,23 @@ namespace ProyectoAdultoMayor
         private void LoadData()
         {
             string MunicipalityCode = Request.QueryString["MUNICIPALITYCODE"];
+            string departmentCode = Request.QueryString["departmentcode"];
 
             OdbcDataAdapter da = new OdbcDataAdapter($@"SELECT 
-                                                             d.departmentname departmentcode,
+                                                             m.departmentcode,
                                                              m.MUNICIPALITYCODE,   
+                                                             d.departmentname,
                                                              m.MUNICIPALITYNAME,
                                                             iif(m.active=0, 'NO', 'SI') AS active 
                                                         FROM REF_MUNIS  m
                                                         INNER JOIN REF_DEPTOS d ON m.departmentcode = d.departmentcode
-                                                        WHERE m.MUNICIPALITYCODE = '{MunicipalityCode}' ", Utilities.ObtenerCadenaConexion());
+                                                        WHERE m.MUNICIPALITYCODE = '{MunicipalityCode}'
+                                                            AND m.departmentcode = '{departmentCode}' ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtDepartmentCode.Text = dt.Rows[0]["departmentcode"].ToString();
             txtMunicipalityCode.Value = dt.Rows[0]["MUNICIPALITYCODE"].ToString();
+            txtDepartmentName.Text = dt.Rows[0]["departmentname"].ToString();
+            txtDepartmentCode.Value = dt.Rows[0]["departmentcode"].ToString();
             txtMunicipalityName.Value = dt.Rows[0]["MUNICIPALITYNAME"].ToString();
             ckbactivo.Checked = dt.Rows[0]["active"].ToString().Equals("True");
         }
@@ -74,7 +78,8 @@ namespace ProyectoAdultoMayor
         {
             // Cargar el grid
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT 
-                                                             d.departmentname departmentcode,
+                                                             d.departmentcode,
+                                                             d.departmentname,
                                                              m.MUNICIPALITYCODE,   
                                                              m.MUNICIPALITYNAME,
                                                             iif(m.active=0, 'NO', 'SI') AS active 
@@ -92,15 +97,15 @@ namespace ProyectoAdultoMayor
         {
             GridViewRow row = GridView1.Rows[e.NewSelectedIndex];
 
-            string MUNICIPALITYCODE = row.Cells[0].Text;
-            string departmentcode = row.Cells[1].Text;
+            string departmentcode = row.Cells[0].Text;
+            string MUNICIPALITYCODE = row.Cells[2].Text;
 
-            Response.Redirect("~/admin/frmRefMunis.aspx?cmd=edit&MUNICIPALITYCODE=" + MUNICIPALITYCODE + "departmentcode=" + departmentcode);
+            Response.Redirect("~/admin/frmRefMunis.aspx?cmd=edit&MUNICIPALITYCODE=" + MUNICIPALITYCODE + "&departmentcode=" + departmentcode);
         }
 
         protected void btnModificarMunicipio_Click(object sender, EventArgs e)
         {
-            string departmentcode = (Request.Form["ctl00$contenido$ttxtDepartmentCode"] != null)?Request.Form["ctl00$contenido$txtDepartmentCode"].ToString():"";
+            string departmentcode = (Request.Form["ctl00$contenido$txtDepartmentCode"] != null)?Request.Form["ctl00$contenido$txtDepartmentCode"].ToString():"";
             string MUNICIPALITYCODE = (Request.Form["ctl00$contenido$txtMunicipalityCode"] != null)?Request.Form["ctl00$contenido$txtMunicipalityCode"].ToString():"";
             string MUNICIPALITYNAME = (Request.Form["ctl00$contenido$txtMunicipalityName"] != null)?Request.Form["ctl00$contenido$txtMunicipalityName"].ToString():"";
             string activo = (Request.Form["ctl00$contenido$ckbactivo"] != null)?Request.Form["ctl00$contenido$ckbactivo"].ToString():"";
@@ -109,16 +114,16 @@ namespace ProyectoAdultoMayor
             cmd.CommandText = @"UPDATE 
                                     REF_MUNIS 
                                 SET 
-                                    departmentcode=?,
                                     MUNICIPALITYNAME=?,
                                     active=?
                                 WHERE
-                                    MUNICIPALITYCODE=?
+                                    departmentcode=?
+                                    AND MUNICIPALITYCODE=?
                                 ";
 
-            cmd.Parameters.Add(new OdbcParameter("departmentcode", departmentcode));
             cmd.Parameters.Add(new OdbcParameter("MUNICIPALITYNAME", MUNICIPALITYNAME));
             cmd.Parameters.Add(new OdbcParameter("active", (activo == "on") ? 1 : 0));
+            cmd.Parameters.Add(new OdbcParameter("departmentcode", departmentcode));
             cmd.Parameters.Add(new OdbcParameter("MUNICIPALITYCODE", MUNICIPALITYCODE));
 
             cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
@@ -153,8 +158,9 @@ namespace ProyectoAdultoMayor
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM REF_MUNIS WHERE MUNICIPALITYCODE = ?";
+                cmd.CommandText = "DELETE FROM REF_MUNIS WHERE MUNICIPALITYCODE = ? and departmentcode =?";
                 cmd.Parameters.Add("@MUNICIPALITYCODE", OdbcType.VarChar).Value = txtMunicipalityCode.Value;
+                cmd.Parameters.Add("@departmentcode", OdbcType.VarChar).Value = txtDepartmentCode.Value;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -183,7 +189,7 @@ namespace ProyectoAdultoMayor
             try
             {
                 cmd.CommandText = "INSERT INTO REF_MUNIS (departmentcode,MUNICIPALITYCODE,MUNICIPALITYNAME,active) VALUES (?,?,?,?)";
-                cmd.Parameters.Add("@departmentcode", OdbcType.VarChar).Value = txtDepartmentCodeAdd.SelectedIndex;
+                cmd.Parameters.Add("@departmentcode", OdbcType.VarChar).Value = txtDepartmentCodeAdd.SelectedValue;
                 cmd.Parameters.Add("@MUNICIPALITYCODE", OdbcType.VarChar).Value = txtMunicipalityCodeAdd.Value;
                 cmd.Parameters.Add("@MUNICIPALITYNAME", OdbcType.VarChar).Value = txtMunicipalityNameAdd.Value;
                 cmd.Parameters.Add("@active", OdbcType.Bit).Value = ckbActivoAdd.Checked;

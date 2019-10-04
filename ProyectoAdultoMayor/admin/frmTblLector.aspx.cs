@@ -57,7 +57,7 @@ namespace ProyectoAdultoMayor
 
             string Lector = row.Cells[0].Text;
 
-            Response.Redirect("~/frmTblLector.aspx?cmd=edit&Lector=" + Lector);
+            Response.Redirect("~/admin/frmTblLector.aspx?cmd=edit&Lector=" + Lector);
         }
 
         protected void btnModificarLector_Click(object sender, EventArgs e)

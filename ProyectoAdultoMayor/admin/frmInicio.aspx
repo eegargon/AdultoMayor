@@ -93,22 +93,7 @@
 			<div class="icono">
 			<a href="/admin/frmTblTabletBus.aspx">TABLET BUS</a>			
 			</div>
-		</div>
-        <div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="icono">
-			<a href="/admin/frmTblTransaccion.aspx">TRANSACCION</a>&nbsp;			
-			</div>
-		</div>
-        <div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="icono">
-			<a href="/admin/frmTblUser.aspx">USUARIOS</a>			
-			</div>
-		</div>
-        <div class="col-md-3 col-sm-4 col-xs-6">
-			<div class="icono">
-			<a href="/admin/frmusers.aspx">ROLES</a>			
-			</div>
-		</div>
+		</div>                  
 		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="icono">
 			<a href="/admin/frmLogout.aspx">SALIR</a>			

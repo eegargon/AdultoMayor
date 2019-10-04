@@ -37,7 +37,16 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDepartmentCode;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDepartmentCode;
+        
+        /// <summary>
+        /// txtDepartmentName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDepartmentName;
         
         /// <summary>
         /// txtMunicipalityName control.
@@ -76,13 +85,13 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.WebControls.Button btnCancelarEdit;
         
         /// <summary>
-        /// btnModificarMunicipio control.
+        /// btnModificarMunicipioCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificarMunicipio;
+        protected global::System.Web.UI.WebControls.Button btnModificarMunicipioCode;
         
         /// <summary>
         /// sm1 control.

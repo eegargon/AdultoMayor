@@ -18,16 +18,21 @@
                 <div class="panel panel-body">
                     <div class="row">
                     <div class="col-md-3"></div>                   
-                    <div class="col-md-6">
-                        <div class="form-group">
+                    <div class="col-md-6">                      
                         <div class="form-group">                        
                         <label for="contenido_txtMunicipalityCode">CODIGO MUNICIPIO</label>
                         <input type="text" class="form-control" id="txtMunicipalityCode"  runat="server" readonly="readonly" >
                         </div>                        
                         <div class="form-group">
-                        <label for="Unidad">CODIGO DEPARTAMENTO</label>
+                        <label for="contenido_txtDepartmentCode">CODIGO DEPARTAMENTO</label>
+                        &nbsp;                            
+                        <input type="text" class="form-control" id="txtDepartmentCode"  runat="server" readonly="readonly" >
+
+                        </div>   
+                        <div class="form-group">
+                        <label for="contenido_txtDepartmentName">NOMBRE DEPARTAMENTO</label>
                         &nbsp;
-                            &nbsp;<asp:TextBox ID="txtDepartmentCode" runat="server" CssClass="form-control muted-text"></asp:TextBox>
+                            &nbsp;<asp:TextBox ID="txtDepartmentName" runat="server" CssClass="form-control muted-text"></asp:TextBox>
                         </div>   
                         <div class="form-group">                        
                         <label for="contenido_txtMunicipalityName">NOMBRE MUNICIPIO</label>
@@ -41,7 +46,7 @@
                         <br />
                         <asp:Button ID="btnEliminar" runat="server" CommandArgument='<%# Eval("MUNICIPALITYCODE") %>' Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" OnClientClick="return checkDelete()"/>
                         <asp:Button ID="btnCancelarEdit" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
-                        <asp:Button ID="btnModificarMunicipio" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificarMunicipio_Click" />
+                        <asp:Button ID="btnModificarMunicipioCode" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificarMunicipio_Click" />
                      </div>
                     </div>
                 </div>
@@ -63,17 +68,17 @@
     <asp:ScriptReference Name="jquery"/>  
   </Scripts>  
 </asp:ScriptManager>  <div class="form-group">                        
-                        <label for="contenido_txtMunicipalityCode">CODIGO MUNICIPIO</label>
+                        <label for="contenido_txtMunicipalityCodeAdd">CODIGO MUNICIPIO</label>
                         <input type="text" class="form-control" id="txtMunicipalityCodeAdd"  runat="server" >
                         </div>                       
                         <div class="form-group">
-                        <label for="departmentcode">CODIGO DEPARTAMENTO</label>
+                        <label for="contenido_txtDepartmentCodeAdd">CODIGO DEPARTAMENTO</label>
                         &nbsp;
                         <asp:DropDownList ID="txtDepartmentCodeAdd" runat="server" CssClass="form-control">
                         </asp:DropDownList>
-                        </div>
+                        </div>        
                         <div class="form-group">                        
-                        <label for="contenido_txtMunicipalityName">NOMBBRE MUNICIPIO</label>
+                        <label for="contenido_txtMunicipalityNameAdds">NOMBBRE MUNICIPIO</label>
                         <input type="text" class="form-control" id="txtMunicipalityNameAdd"  runat="server" >
                         </div>   
                         <div class="form-check">
@@ -102,8 +107,9 @@
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>
-                        <asp:BoundField DataField="MUNICIPALITYCODE" HeaderText="CODIGO MUNICIPIO" />
                         <asp:BoundField DataField="departmentcode" HeaderText="CODIGO DEPARTAMENTO" />
+                        <asp:BoundField DataField="departmentname" HeaderText="NOMBRE DEPARTAMENTO" />
+                        <asp:BoundField DataField="MUNICIPALITYCODE" HeaderText="CODIGO MUNICIPIO" />
                         <asp:BoundField DataField="MUNICIPALITYNAME" HeaderText="NOMBRE MUNICIPIO" />
                         <asp:BoundField DataField="active" HeaderText="ACTIVO" />
                         <asp:CommandField ShowSelectButton="True" SelectText="GESTIONAR"  />

@@ -130,7 +130,7 @@ namespace ProyectoAdultoMayor
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM TBL_SIM WHERE SIM = ? ";
+                cmd.CommandText = "DELETE FROM TBL_SIM WHERE SIM = ?";
                 cmd.Parameters.Add("@SIM", OdbcType.VarChar).Value = txtSIM.Value;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();
