@@ -37,7 +37,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMunicipio;
+        protected global::System.Web.UI.WebControls.DropDownList txtMunicipio;
         
         /// <summary>
         /// txtDepartamento control.
@@ -46,7 +46,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDepartamento;
+        protected global::System.Web.UI.WebControls.DropDownList txtDepartamento;
         
         /// <summary>
         /// txtAsociacion control.
@@ -55,7 +55,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAsociacion;
+        protected global::System.Web.UI.WebControls.DropDownList txtAsociacion;
         
         /// <summary>
         /// txtRuta control.
@@ -64,7 +64,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtRuta;
+        protected global::System.Web.UI.WebControls.DropDownList txtRuta;
         
         /// <summary>
         /// txtCUIPropietario control.
@@ -73,7 +73,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCUIPropietario;
+        protected global::System.Web.UI.WebControls.DropDownList txtCUIPropietario;
         
         /// <summary>
         /// txtCuiPiloto control.
@@ -82,7 +82,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCuiPiloto;
+        protected global::System.Web.UI.WebControls.DropDownList txtCuiPiloto;
         
         /// <summary>
         /// txtNoAfiliacion control.
@@ -265,69 +265,6 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtSIM;
         
         /// <summary>
-        /// txtCampo1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo1;
-        
-        /// <summary>
-        /// txtCampo2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo2;
-        
-        /// <summary>
-        /// txtCampo3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo3;
-        
-        /// <summary>
-        /// txtCampo4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo4;
-        
-        /// <summary>
-        /// txtCampo5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo5;
-        
-        /// <summary>
-        /// txtCampo6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo6;
-        
-        /// <summary>
-        /// txtCampo7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo7;
-        
-        /// <summary>
         /// ckbactive control.
         /// </summary>
         /// <remarks>
@@ -355,13 +292,13 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.WebControls.Button btnCancelarEdit;
         
         /// <summary>
-        /// btnModificar control.
+        /// btnModificarNoUNidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnModificar;
+        protected global::System.Web.UI.WebControls.Button btnModificarNoUNidad;
         
         /// <summary>
         /// sm1 control.
@@ -373,22 +310,40 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
-        /// txtMunicipalityCodeAdd control.
+        /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtMunicipalityCodeAdd;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// txtdepartmentcodeAdd control.
+        /// txtNoUNidadAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtdepartmentcodeAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNoUNidadAdd;
+        
+        /// <summary>
+        /// txtMunicipioAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList txtMunicipioAdd;
+        
+        /// <summary>
+        /// txtDepartamentoAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList txtDepartamentoAdd;
         
         /// <summary>
         /// txtAsociacionAdd control.
@@ -409,22 +364,22 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.WebControls.DropDownList txtRutaAdd;
         
         /// <summary>
-        /// txtCUIAdd control.
+        /// txtCUIPropietarioAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtCUIAdd;
+        protected global::System.Web.UI.WebControls.DropDownList txtCUIPropietarioAdd;
         
         /// <summary>
-        /// txtCUIAdd1 control.
+        /// txtCuiPilotoAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtCUIAdd1;
+        protected global::System.Web.UI.WebControls.DropDownList txtCuiPilotoAdd;
         
         /// <summary>
         /// RequiredFieldValidator7 control.
@@ -787,132 +742,6 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtSIMAdd;
         
         /// <summary>
-        /// RequiredFieldValidator27 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator27;
-        
-        /// <summary>
-        /// txtCampo1Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo1Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator28 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator28;
-        
-        /// <summary>
-        /// txtCampo2Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo2Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator29 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator29;
-        
-        /// <summary>
-        /// txtCampo3Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo3Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator30 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator30;
-        
-        /// <summary>
-        /// txtCampo4Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo4Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator31 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator31;
-        
-        /// <summary>
-        /// txtCampo5Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo5Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator32 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator32;
-        
-        /// <summary>
-        /// txtCampo6Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo6Add;
-        
-        /// <summary>
-        /// RequiredFieldValidator33 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator33;
-        
-        /// <summary>
-        /// txtCampo7Add control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtCampo7Add;
-        
-        /// <summary>
         /// ckbactiveAdd control.
         /// </summary>
         /// <remarks>
@@ -931,13 +760,13 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.WebControls.Button btnCancelarAdd;
         
         /// <summary>
-        /// btnAgregar control.
+        /// btnAgregarNoUNidad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        protected global::System.Web.UI.WebControls.Button btnAgregarNoUNidad;
         
         /// <summary>
         /// GridView1 control.

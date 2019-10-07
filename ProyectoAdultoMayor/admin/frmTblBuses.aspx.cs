@@ -20,67 +20,113 @@ namespace ProyectoAdultoMayor
 
             if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Editar)
             {
-                LoadData();
-            }
-
-            if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Agregar)
-            {
                 CargarMunicipio();
                 CargarDepartamento();
                 CargarAsociacion();
                 CargarRuta();
                 CargarCUIPropietario();
                 CargarCuiPiloto();
+                LoadData();
+            }
+
+            if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Agregar)
+            {
+                CargarMunicipioAdd();
+                CargarDepartamentoAdd();
+                CargarAsociacionAdd();
+                CargarRutaAdd();
+                CargarCUIPropietarioAdd();
+                CargarCuiPilotoAdd();
             }
         }
 
         private void CargarMunicipio()
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
-                                                            MunicipalityCode, 
-                                                            MunicipalityName, 
-                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                            MUNICIPALITYCODE, 
+                                                            MUNICIPALITYNAME                                                            
                                                         FROM REF_MUNIS
                                                         WHERE active = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtMunicipalityCodeAdd.DataTextField = "MunicipalityCode";
-            txtMunicipalityCodeAdd.DataTextField = "MunicipalityName";
-            txtMunicipalityCodeAdd.DataSource = dt;
-            txtMunicipalityCodeAdd.DataBind();
+            txtMunicipio.DataValueField = "MUNICIPALITYCODE";
+            txtMunicipio.DataTextField = "MUNICIPALITYNAME";
+            txtMunicipio.DataSource = dt;
+            txtMunicipio.DataBind();
+        }
+
+        private void CargarMunicipioAdd()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
+                                                            MUNICIPALITYCODE, 
+                                                            MUNICIPALITYNAME                                                            
+                                                        FROM REF_MUNIS
+                                                        WHERE active = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtMunicipioAdd.DataValueField = "MUNICIPALITYCODE";
+            txtMunicipioAdd.DataTextField = "MUNICIPALITYNAME";
+            txtMunicipioAdd.DataSource = dt;
+            txtMunicipioAdd.DataBind();
         }
 
         private void CargarDepartamento()
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
-                                                            DepartmentCode, 
-                                                            DepartmentName, 
-                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                            departmentCode, DepartmentName                                                            
                                                         FROM REF_DEPTOS
                                                         WHERE active = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtdepartmentcodeAdd.DataTextField = "departmentcode";
-            txtdepartmentcodeAdd.DataTextField = "departmentname";
-            txtdepartmentcodeAdd.DataSource = dt;
-            txtdepartmentcodeAdd.DataBind();
+            txtDepartamento.DataValueField = "departmentcode";
+            txtDepartamento.DataTextField = "departmentname";
+            txtDepartamento.DataSource = dt;
+            txtDepartamento.DataBind();
         }
 
-        private void CargarAsociacion()
+        private void CargarDepartamentoAdd()
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
-                                                            Asociacion, 
-                                                            Asociacion, 
-                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
-                                                        FROM TBL_ASOCIACION
+                                                            departmentCode, DepartmentName                                                            
+                                                        FROM REF_DEPTOS
                                                         WHERE active = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtAsociacionAdd.DataTextField = "Asociacion";
-            txtAsociacionAdd.DataTextField = "Asociacion";
+            txtDepartamentoAdd.DataValueField = "departmentcode";
+            txtDepartamentoAdd.DataTextField = "departmentname";
+            txtDepartamentoAdd.DataSource = dt;
+            txtDepartamentoAdd.DataBind();
+        }
+
+        private void CargarAsociacion()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"select 
+		                                                    Asociacion, Descripcion 		                                                   
+		                                                    from TBL_ASOCIACION 
+                                                            where Activo = 1
+                                                      ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtAsociacion.DataValueField = "Asociacion";
+            txtAsociacion.DataTextField = "Descripcion";
+            txtAsociacion.DataSource = dt;
+            txtAsociacion.DataBind();
+        }
+        private void CargarAsociacionAdd()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"select 
+		                                                    Asociacion, Descripcion 		                                                   
+		                                                    from TBL_ASOCIACION 
+                                                            where Activo = 1
+                                                      ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtAsociacionAdd.DataValueField = "Asociacion";
+            txtAsociacionAdd.DataTextField = "Descripcion";
             txtAsociacionAdd.DataSource = dt;
             txtAsociacionAdd.DataBind();
         }
@@ -88,15 +134,29 @@ namespace ProyectoAdultoMayor
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
                                                             Ruta, 
-                                                            Ruta, 
-                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                            Descripcion                                                            
                                                         FROM TBL_RUTA
                                                         WHERE Activo = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtRutaAdd.DataTextField = "Ruta";
-            txtRutaAdd.DataTextField = "Ruta";
+            txtRuta.DataValueField = "Ruta";
+            txtRuta.DataTextField = "Descripcion";
+            txtRuta.DataSource = dt;
+            txtRuta.DataBind();
+        }
+        private void CargarRutaAdd()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
+                                                            Ruta, 
+                                                            Descripcion                                                            
+                                                        FROM TBL_RUTA
+                                                        WHERE Activo = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtRutaAdd.DataValueField = "Ruta";
+            txtRutaAdd.DataTextField = "Descripcion";
             txtRutaAdd.DataSource = dt;
             txtRutaAdd.DataBind();
         }
@@ -104,59 +164,87 @@ namespace ProyectoAdultoMayor
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
                                                             CUI, 
-                                                            Nombre, 
-                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                            Nombre                                                             
                                                         FROM TBL_PROPIETARIO
                                                         WHERE Activo = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtCUIAdd.DataTextField = "CUI";
-            txtCUIAdd.DataTextField = "Nombre";
-            txtCUIAdd.DataSource = dt;
-            txtCUIAdd.DataBind();
+            txtCUIPropietario.DataValueField = "CUI";
+            txtCUIPropietario.DataTextField = "Nombre";
+            txtCUIPropietario.DataSource = dt;
+            txtCUIPropietario.DataBind();
+        }
+        private void CargarCUIPropietarioAdd()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
+                                                            CUI, 
+                                                            Nombre                                                             
+                                                        FROM TBL_PROPIETARIO
+                                                        WHERE Activo = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtCUIPropietarioAdd.DataValueField = "CUI";
+            txtCUIPropietarioAdd.DataTextField = "Nombre";
+            txtCUIPropietarioAdd.DataSource = dt;
+            txtCUIPropietarioAdd.DataBind();
         }
         private void CargarCuiPiloto()
         {
             OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
                                                         CUI, 
-                                                        Nombre, 
-                                                        iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                        Nombre                                                        
                                                         FROM TBL_PILOTO
                                                         WHERE Activo = 1
                                                     ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
-            txtCUIAdd.DataTextField = "CUI";
-            txtCUIAdd.DataTextField = "Nombre";
-            txtCUIAdd.DataSource = dt;
-            txtCUIAdd.DataBind();
+            txtCuiPiloto.DataValueField = "CUI";
+            txtCuiPiloto.DataTextField = "Nombre";
+            txtCuiPiloto.DataSource = dt;
+            txtCuiPiloto.DataBind();
+        }
+        private void CargarCuiPilotoAdd()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
+                                                        CUI, 
+                                                        Nombre                                                        
+                                                        FROM TBL_PILOTO
+                                                        WHERE Activo = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtCuiPilotoAdd.DataValueField = "CUI";
+            txtCuiPilotoAdd.DataTextField = "Nombre";
+            txtCuiPilotoAdd.DataSource = dt;
+            txtCuiPilotoAdd.DataBind();
         }
 
         private void LoadData()
         {
             string NoUNidad = Request.QueryString["NoUNidad"];
-            OdbcDataAdapter da = new OdbcDataAdapter(@"select b.NoUNidad, m.MUNICIPALITYNAME, m.departmentcode, a.Asociacion, r.Ruta, pro.CUI, pil.CUI, b.NoAfiliacion, b.PinAcceso, b.Consola, b.Lector, b.FechaInstalacion, b.RegularoSuplente, b.Marca, b.Modelo, b.Ano, b.Color, b. NoPlaca, b. NoPasajeros, b. Combustible, b.Tanque, b.FechaMant, b.TipoLLantas, b.CantidadLlantas, b.EstadoVehiculo, b.ComentariosInstalacion, b.SIM, b.Campo1, b.Campo2, b.Campo3, b.Campo4, b.Campo5, b.Campo6, b.Campo7,
-                                                iif(b.Activo=0, 'NO', 'SI') AS Activo 
-                                                   from TBL_BUSES AS b 
+            OdbcDataAdapter da = new OdbcDataAdapter($@"SELECT
+                                                    b.NoUNidad, m.MUNICIPALITYNAME as Municipio, dep.departmentname as Departamento, a.Descripcion as Asociacion, r.Descripcion as Ruta, pro.CUI as CUIPropietario, pil.CUI as CuiPiloto, b.NoAfiliacion, b.PinAcceso, b.Consola, b.Lector, b.FechaInstalacion, b.RegularoSuplente, b.Marca, b.Modelo, b.Ano, b.Color, b. NoPlaca, b.NoPasajeros, b.Combustible, b.Tanque, b.FechaMant, b.TipoLLantas, b.CantidadLlantas, b.EstadoVehiculo, b.ComentariosInstalacion, b.SIM,
+                                                    iif(b.Activo=0, 'NO', 'SI') AS Activo 
+                                                    from TBL_BUSES AS b 
                                                     inner join TBL_ASOCIACION as a on b.Asociacion = a.Asociacion
                                                     inner join TBL_RUTA as r ON b.Ruta = r.Ruta
                                                     inner join TBL_PROPIETARIO as pro ON b.CUIPropietario = pro.CUI
-                                                    inner join TBL_PILOTO as pil on b.CuiPiloto = pil.CUI
+                                                    inner join TBL_PILOTO as pil on b.CuiPiloto = pil.CUI                                                    
                                                     INNER JOIN REF_MUNIS AS m ON b.Municipio = m.MUNICIPALITYCODE And m.departmentcode = b.Departamento
-                                                    WHERE NoUnidad = '{NoUnidad}'",
-                                                    
-             Utilities.ObtenerCadenaConexion());
+													INNER JOIN REF_DEPTOS as dep on m.departmentcode = dep.departmentcode
+                                                    WHERE b.NoUNidad = '{NoUNidad}'", Utilities.ObtenerCadenaConexion());
 
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            da.Fill(dt);        
             txtNoUNidad.Value = dt.Rows[0]["NoUNidad"].ToString();
-            txtMunicipio.Value = dt.Rows[0]["Municipio"].ToString();
-            txtDepartamento.Value = dt.Rows[0]["Departamento"].ToString();
-            txtAsociacion.Value = dt.Rows[0]["Asociacion"].ToString();
-            txtRuta.Value = dt.Rows[0]["Ruta"].ToString();
-            txtCUIPropietario.Value = dt.Rows[0]["CUIPropietario"].ToString();
-            txtCuiPiloto.Value = dt.Rows[0]["CuiPiloto"].ToString();
+            txtMunicipio.SelectedValue= dt.Rows[0]["Municipio"].ToString();
+            txtDepartamento.SelectedValue = dt.Rows[0]["Departamento"].ToString();
+            txtAsociacion.SelectedValue = dt.Rows[0]["Asociacion"].ToString();
+            txtRuta.SelectedValue = dt.Rows[0]["Ruta"].ToString();
+            txtCUIPropietario.SelectedValue = dt.Rows[0]["CUIPropietario"].ToString();
+            txtCuiPiloto.SelectedValue = dt.Rows[0]["CuiPiloto"].ToString();
             txtNoAfiliacion.Value = dt.Rows[0]["NoAfiliacion"].ToString();
             txtPinAcceso.Value = dt.Rows[0]["PinAcceso"].ToString();
             txtConsola.Value = dt.Rows[0]["Consola"].ToString();
@@ -177,26 +265,20 @@ namespace ProyectoAdultoMayor
             txtEstadoVehiculo.Value = dt.Rows[0]["EstadoVehiculo"].ToString();
             txtComentariosInstalacion.Value = dt.Rows[0]["ComentariosInstalacion"].ToString();
             txtSIM.Value = dt.Rows[0]["SIM"].ToString();
-            txtCampo1.Value = dt.Rows[0]["Campo1"].ToString();
-            txtCampo2.Value = dt.Rows[0]["Campo2"].ToString();
-            txtCampo3.Value = dt.Rows[0]["Campo3"].ToString();
-            txtCampo4.Value = dt.Rows[0]["Campo4"].ToString();
-            txtCampo5.Value = dt.Rows[0]["Campo5"].ToString();
-            txtCampo6.Value = dt.Rows[0]["Campo6"].ToString();
-            txtCampo7.Value = dt.Rows[0]["Campo7"].ToString();
             ckbactive.Checked = dt.Rows[0]["Activo"].ToString().Equals("True");
         }
 
         private void BindTable()
         {
-            OdbcDataAdapter da = new OdbcDataAdapter(@"select b.NoUNidad, m.municipalityname as Municipio, m.departmentcode as Departamento, a.Asociacion, r.Ruta, pro.CUI as CUIPropietario, pil.CUI as CuiPiloto, b.NoAfiliacion, b.PinAcceso, b.Consola, b.Lector, b.FechaInstalacion, b.RegularoSuplente, b.Marca, b.Modelo, b.Ano, b.Color, b. NoPlaca, b. NoPasajeros, b. Combustible, b.Tanque, b.FechaMant, b.TipoLLantas, b.CantidadLlantas, b.EstadoVehiculo, b.ComentariosInstalacion, b.SIM, b.Campo1, b.Campo2, b.Campo3, b.Campo4, b.Campo5, b.Campo6, b.Campo7,
+            OdbcDataAdapter da = new OdbcDataAdapter(@"select b.NoUNidad, m.MUNICIPALITYNAME as Municipio, dep.departmentname as Departamento, a.Descripcion as Asociacion, r.Descripcion as Ruta, pro.CUI as CUIPropietario, pil.CUI as CuiPiloto, b.NoAfiliacion, b.PinAcceso, b.Consola, b.Lector, b.FechaInstalacion, b.RegularoSuplente, b.Marca, b.Modelo, b.Ano, b.Color, b. NoPlaca, b. NoPasajeros, b. Combustible, b.Tanque, b.FechaMant, b.TipoLLantas, b.CantidadLlantas, b.EstadoVehiculo, b.ComentariosInstalacion, b.SIM,
                                                 iif(b.activo=0, 'NO', 'SI') AS activo 
                                                    from TBL_BUSES AS b 
                                                     inner join TBL_ASOCIACION as a on b.Asociacion = a.Asociacion
                                                     inner join TBL_RUTA as r ON b.Ruta = r.Ruta
                                                     inner join TBL_PROPIETARIO as pro ON b.CUIPropietario = pro.CUI
                                                     inner join TBL_PILOTO as pil on b.CuiPiloto = pil.CUI
-                                                    INNER JOIN REF_MUNIS AS m ON b.Municipio = m.MUNICIPALITYCODE And m.departmentcode = b.Departamento", 
+                                                    INNER JOIN REF_MUNIS AS m ON b.Municipio = m.MUNICIPALITYCODE And m.departmentcode = b.Departamento
+													INNER JOIN REF_DEPTOS as dep on m.departmentcode = dep.departmentcode", 
                                                    
 
             Utilities.ObtenerCadenaConexion());
@@ -216,7 +298,7 @@ namespace ProyectoAdultoMayor
             Response.Redirect("~/admin/frmTblBuses.aspx?cmd=edit&NoUNidad=" + NoUNidad);
         }
 
-        protected void btnModificar_Click(object sender, EventArgs e)
+        protected void btnModificarNoUNidad_Click(object sender, EventArgs e)
         {
             string NoUNidad = (Request.Form["ctl00$contenido$txtNoUNidad"] != null) ? Request.Form["ctl00$contenido$txtNoUNidad"].ToString() : "";
             string Municipio = (Request.Form["ctl00$contenido$txtMunicipio"] != null) ? Request.Form["ctl00$contenido$txtMunicipio"].ToString() : "";
@@ -245,20 +327,13 @@ namespace ProyectoAdultoMayor
             string EstadoVehiculo = (Request.Form["ctl00$contenido$txtEstadoVehiculo"] != null) ? Request.Form["ctl00$contenido$txtEstadoVehiculo"].ToString() : "";
             string ComentariosInstalacion = (Request.Form["ctl00$contenido$txtComentariosInstalacion"] != null) ? Request.Form["ctl00$contenido$txtComentariosInstalacion"].ToString() : "";
             string SIM = (Request.Form["ctl00$contenido$txtSIM"] != null) ? Request.Form["ctl00$contenido$txtSIM"].ToString() : "";
-            string Campo1 = (Request.Form["ctl00$contenido$txtCampo1"] != null) ? Request.Form["ctl00$contenido$txtCampo1"].ToString() : "";
-            string Campo2 = (Request.Form["ctl00$contenido$txtCampo2"] != null) ? Request.Form["ctl00$contenido$txtCampo2"].ToString() : "";
-            string Campo3 = (Request.Form["ctl00$contenido$txtCampo3"] != null) ? Request.Form["ctl00$contenido$txtCampo3"].ToString() : "";
-            string Campo4 = (Request.Form["ctl00$contenido$txtCampo4"] != null) ? Request.Form["ctl00$contenido$txtCampo4"].ToString() : "";
-            string Campo5 = (Request.Form["ctl00$contenido$txtCampo5"] != null) ? Request.Form["ctl00$contenido$txtCampo5"].ToString() : "";
-            string Campo6 = (Request.Form["ctl00$contenido$txtCampo6"] != null) ? Request.Form["ctl00$contenido$txtCampo6"].ToString() : "";
-            string Campo7 = (Request.Form["ctl00$contenido$txtCampo7"] != null) ? Request.Form["ctl00$contenido$txtCampo7"].ToString() : "";
             string active = (Request.Form["ctl00$contenido$ckbactive"] != null) ? Request.Form["ctl00$contenido$ckbactive"].ToString() : "";
 
 
             OdbcCommand cmd = new OdbcCommand();
             cmd.CommandText = @"UPDATE 
                                     TBL_BUSES
-                                SET                                     
+                                SET                                                                                        
                                                              Municipio=?,
                                                              Departamento=?,
                                                              Asociacion=?,
@@ -285,17 +360,11 @@ namespace ProyectoAdultoMayor
                                                              EstadoVehiculo=?,
                                                              ComentariosInstalacion=?,
                                                              SIM=?,
-                                                             Campo1=?,
-                                                             Campo2=?,
-                                                             Campo3=?,
-                                                             Campo4=?,
-                                                             Campo5=?,
-                                                             Campo6=?,
-                                                             Campo7=?,  
                                                              Activo=?
                                                             WHERE
                                                                 NoUNidad=?
                                                             ";
+
             cmd.Parameters.Add(new OdbcParameter("Municipio", Municipio));
             cmd.Parameters.Add(new OdbcParameter("Departamento", Departamento));
             cmd.Parameters.Add(new OdbcParameter("Asociacion", Asociacion));
@@ -322,13 +391,6 @@ namespace ProyectoAdultoMayor
             cmd.Parameters.Add(new OdbcParameter("EstadoVehiculo", EstadoVehiculo));
             cmd.Parameters.Add(new OdbcParameter("ComentariosInstalacion", ComentariosInstalacion));
             cmd.Parameters.Add(new OdbcParameter("SIM", SIM));
-            cmd.Parameters.Add(new OdbcParameter("Campo1", Campo1));
-            cmd.Parameters.Add(new OdbcParameter("Campo2", Campo2));
-            cmd.Parameters.Add(new OdbcParameter("Campo3", Campo3));
-            cmd.Parameters.Add(new OdbcParameter("Campo4", Campo4));
-            cmd.Parameters.Add(new OdbcParameter("Campo5", Campo5));
-            cmd.Parameters.Add(new OdbcParameter("Campo6", Campo6));
-            cmd.Parameters.Add(new OdbcParameter("Campo7", Campo7));
             cmd.Parameters.Add(new OdbcParameter("Activo", (active == "on") ? 1 : 0));
             cmd.Parameters.Add(new OdbcParameter("NoUNidad", NoUNidad));
 
@@ -358,6 +420,7 @@ namespace ProyectoAdultoMayor
         private void IrAlListadoPrincipal()
         {
             Response.Redirect("~/admin/frmTblBuses.aspx");
+            Response.End();
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -383,52 +446,56 @@ namespace ProyectoAdultoMayor
             }
         }
 
-        protected void btnAgregar_Click(object sender, EventArgs e)
+        protected void btnAgregarNoUNidad_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid)
-            {
-                return;
-            }
-
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "INSERT INTO TBL_BUSES (Municipio, Departamento, Asociacion, Ruta, CUIPropietario, CuiPiloto, NoAfiliacion, PinAcceso,Consola,Lector, FechaInstalacion, RegularoSuplente, Marca, Modelo, Ano,Color, NoPlaca, NoPasajeros,Combustible, Tanque, FechaMant, TipoLLantas, CantidadLlantas, EstadoVehiculo, ComentariosInstalacion, SIM, Campo1, Campo2, Campo3, Campo4, Campo5, Campo6, Campo7, Activo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                string NoUNidad = txtNoUNidad.Value;
+                string Municipio = txtMunicipio.SelectedValue;
+                string Departamento = txtDepartamento.SelectedValue;
+                string Asociacion = txtAsociacion.SelectedValue;
+                string Ruta = txtRuta.SelectedValue;
+                string CUIPropietario = txtCUIPropietario.SelectedValue;
+                string CuiPiloto = txtCuiPiloto.SelectedValue;
+                string NoAfiliacion = txtNoAfiliacion.Value;
+                string PinAcceso = txtPinAcceso.Value;
+                string Consola = txtConsola.Value;
+                string Lector = txtLector.Value;
+                string FechaInstalacion = string.IsNullOrEmpty(txtFechaInstalacion.Value) ? DateTime.Now.ToShortDateString() : txtFechaInstalacion.Value;
+                string RegularoSuplente = string.IsNullOrEmpty(txtRegularoSuplente.Value) ? "0" : txtRegularoSuplente.Value;
+                string Marca = txtMarca.Value;
+                string Modelo = txtModelo.Value;
+                string Ano = string.IsNullOrEmpty(txtAno.Value) ? "1900" : txtAno.Value;
+                string Color = txtColor.Value;
+                string NoPlaca = txtNoPlaca.Value;
+                string NoPasajeros = txtNoPasajeros.Value;
+                string Combustible = txtCombustible.Value;
+                string Tanque = txtTanque.Value;
+                string FechaMant = (txtFechaMant.Value == null) ? DateTime.Now.ToShortDateString() : txtFechaMant.Value;
+                string TipoLLantas = txtTipoLLantas.Value;
+                string CantidadLlantas = string.IsNullOrEmpty(txtCantidadLlantas.Value) ? "0" : txtCantidadLlantas.Value;
+                string EstadoVehiculo = txtEstadoVehiculo.Value;
+                string ComentariosInstalacion = txtComentariosInstalacion.Value;
+                string SIM = txtSIM.Value;
+                string Activo = (ckbactive.Checked) ? "1" : "0";
+                string sqlQuery = string.Format("UPDATE TBL_BUSES  SET" +
+                    "                               Municipio = '{0}', Departamento = '{1}', Asociacion = '{2}', Ruta = '{3}', " +
+                    "                               CUIPropietario = '{4}', CuiPiloto = '{5}', NoAfiliacion = '{6}', PinAcceso = '{7}',Consola = '{8}'," +
+                    "                               Lector = '{9}', FechaInstalacion = '{10}', RegularoSuplente = {11}, Marca = '{12}', Modelo = '{13}', " +
+                    "                               Ano = {14},Color = '{15}', NoPlaca = '{16}', NoPasajeros = '{17}',Combustible = '{18}', Tanque = '{19}', " +
+                    "                               FechaMant = '{20}', TipoLLantas = '{21}', CantidadLlantas = {22}, EstadoVehiculo = '{23}', ComentariosInstalacion = '{24}', " +
+                    "                               SIM = '{25}', Activo = {26}" +
+                    "                           WHERE " +
+                    "                               NoUNidad = '{27}' ", 
+                            Municipio, Departamento, Asociacion, Ruta,
+                            CUIPropietario, CuiPiloto, NoAfiliacion, PinAcceso, Consola,
+                            Lector, FechaInstalacion, RegularoSuplente, Marca, Modelo,
+                            Ano, Color, NoPlaca, NoPasajeros, Combustible,Tanque, 
+                            FechaMant, TipoLLantas, CantidadLlantas, EstadoVehiculo, ComentariosInstalacion,
+                            SIM, Activo, NoUNidad);
 
-                cmd.Parameters.Add("@Municipio", OdbcType.NVarChar).Value = txtMunicipalityCodeAdd.SelectedValue;
-                cmd.Parameters.Add("@Departamento", OdbcType.NVarChar).Value = txtdepartmentcodeAdd.SelectedValue;
-                cmd.Parameters.Add("@Asociacion", OdbcType.VarChar).Value = txtAsociacionAdd.SelectedValue;
-                cmd.Parameters.Add("@Ruta", OdbcType.VarChar).Value = txtRutaAdd.SelectedValue;
-                cmd.Parameters.Add("@CUIPropietario", OdbcType.VarChar).Value = txtCUIAdd.SelectedValue;
-                cmd.Parameters.Add("@CuiPiloto", OdbcType.VarChar).Value = txtCUIAdd1.SelectedValue;
-                cmd.Parameters.Add("@NoAfiliacion", OdbcType.VarChar).Value = txtNoAfiliacionAdd.Value;
-                cmd.Parameters.Add("@PinAcceso", OdbcType.VarChar).Value = txtPinAccesoAdd.Value;
-                cmd.Parameters.Add("@Consola", OdbcType.VarChar).Value = txtConsolaAdd.Value;
-                cmd.Parameters.Add("@Lector", OdbcType.VarChar).Value = txtLectorAdd.Value;
-                cmd.Parameters.Add("@FechaInstalacion", OdbcType.DateTime).Value = txtFechaInstalacionAdd.Value;
-                cmd.Parameters.Add("@RegularoSuplente", OdbcType.VarChar).Value = txtRegularoSuplenteAdd.Value;
-                cmd.Parameters.Add("@Marca", OdbcType.VarChar).Value = txtMarcaAdd.Value;
-                cmd.Parameters.Add("@Modelo", OdbcType.VarChar).Value = txtModeloAdd.Value;
-                cmd.Parameters.Add("@Ano", OdbcType.Int).Value = txtAnoAdd.Value;
-                cmd.Parameters.Add("@Color", OdbcType.VarChar).Value = txtColorAdd.Value;
-                cmd.Parameters.Add("@NoPlaca", OdbcType.VarChar).Value = txtNoPlacaAdd.Value;
-                cmd.Parameters.Add("@NoPasajeros", OdbcType.VarChar).Value = txtNoPasajerosAdd.Value;
-                cmd.Parameters.Add("@Combustible", OdbcType.VarChar).Value = txtCombustibleAdd.Value;
-                cmd.Parameters.Add("@Tanque", OdbcType.VarChar).Value = txtTanqueAdd.Value;
-                cmd.Parameters.Add("@FechaMant", OdbcType.DateTime).Value = txtFechaMantAdd.Value;
-                cmd.Parameters.Add("@TipoLLantas", OdbcType.VarChar).Value = txtTipoLLantasAdd.Value;
-                cmd.Parameters.Add("@CantidadLlantas", OdbcType.Int).Value = txtCantidadLlantasAdd.Value;
-                cmd.Parameters.Add("@EstadoVehiculo", OdbcType.VarChar).Value = txtEstadoVehiculoAdd.Value;
-                cmd.Parameters.Add("@ComentariosInstalacion", OdbcType.VarChar).Value = txtComentariosInstalacionAdd.Value;
-                cmd.Parameters.Add("@SIM", OdbcType.VarChar).Value = txtSIMAdd.Value;
-                cmd.Parameters.Add("@Campo1", OdbcType.VarChar).Value = txtCampo1Add.Value;
-                cmd.Parameters.Add("@Campo2", OdbcType.VarChar).Value = txtCampo2Add.Value;
-                cmd.Parameters.Add("@Campo3", OdbcType.VarChar).Value = txtCampo3Add.Value;
-                cmd.Parameters.Add("@Campo4", OdbcType.VarChar).Value = txtCampo4Add.Value;
-                cmd.Parameters.Add("@Campo5", OdbcType.VarChar).Value = txtCampo5Add.Value;
-                cmd.Parameters.Add("@Campo6", OdbcType.VarChar).Value = txtCampo6Add.Value;
-                cmd.Parameters.Add("@Campo7", OdbcType.VarChar).Value = txtCampo7Add.Value;               
-                cmd.Parameters.Add("@Activo", OdbcType.VarChar).Value = ckbactiveAdd.Checked;
+                cmd.CommandText = sqlQuery;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -471,9 +538,6 @@ namespace ProyectoAdultoMayor
             return esNumerico;
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+                
     }
 }

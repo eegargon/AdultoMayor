@@ -102,7 +102,7 @@
                         <input type="text" class="form-control" id="txtInstaladaAdd" runat="server" placeholder="Ingresar Si/No"/>
                         </div>
                         <div class="form-group">
-                        <label for="CostoInventario">COSTO</label>
+                        <label for="ControlInventario">CONTROL DE INVENTARIO</label>
                         <input type="text" class="form-control" id="txtControlInventarioAdd" runat="server" placeholder="Ingresar el Control de Inventario"/>
                         </div>
                         <div class="form-group">
@@ -134,8 +134,8 @@
                 </p>
                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>
-                        <asp:BoundField DataField="Consola" HeaderText="Consola" />
-                        <asp:BoundField DataField="NoSerie" HeaderText="TELEFONO" />
+                        <asp:BoundField DataField="Consola" HeaderText="CONSOLA" />
+                        <asp:BoundField DataField="NoSerie" HeaderText="NUMERO DE SERIE" />
                         <asp:BoundField DataField="Modelo" HeaderText="MODELO" />  
                         <asp:BoundField DataField="ColorFOB" HeaderText="COLOR FOB" />
                         <asp:BoundField DataField="Instalada" HeaderText="INSTALADA" />

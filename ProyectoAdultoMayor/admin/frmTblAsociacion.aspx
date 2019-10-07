@@ -27,6 +27,10 @@
                         <label for="contenido_txtDescripcion">DESCRIPCION</label>
                         <input type="text" class="form-control" id="txtDescripcion" runat="server" >         
                         </div> 
+                        <div class="form-group">
+                        <label for="contenido_txtDescripcionU">DESCRIPCION U </label>
+                        <input type="text" class="form-control" id="txtDescripcionU" runat="server" >         
+                        </div> 
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="ckbactivo" runat="server">
                         <label class="form-check-label" for="contenido_ckbactivo">ACTIVO</label>
@@ -68,7 +72,13 @@
                         &nbsp;
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtDescripcionAdd" ErrorMessage="El campo Descripci&oacute;n es obligatorio"></asp:RequiredFieldValidator>
                         <input type="text" class="form-control" id="txtDescripcionAdd" runat="server" placeholder="Ingresar la Descripcion">         
-                        </div>         
+                        </div>
+                        <div class="form-group">
+                        <label for="DescripcionU">DESCRIPCION U</label>
+                        &nbsp;
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtDescripcionUAdd" ErrorMessage="El campo Descripci&oacute;n U es obligatorio"></asp:RequiredFieldValidator>
+                        <input type="text" class="form-control" id="txtDescripcionUAdd" runat="server" placeholder="Ingresar la Descripcion U">         
+                        </div>   
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="ckbActivoAdd" runat="server">
                         <label class="form-check-label" for="activo">ACTIVO</label>
@@ -96,6 +106,7 @@
                     <Columns>
                         <asp:BoundField DataField="Asociacion" HeaderText="ASOCIACION" />
                         <asp:BoundField DataField="Descripcion" HeaderText="DESCRIPCION" />
+                        <asp:BoundField DataField="DescripcionU" HeaderText="DESCRIPCION U" />
                         <asp:BoundField DataField="Activo" HeaderText="ACTIVO" />
                         <asp:CommandField ShowSelectButton="True" SelectText="GESTIONAR"  />
                     </Columns>

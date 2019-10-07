@@ -40,6 +40,15 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescripcion;
         
         /// <summary>
+        /// txtDescripcionU control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescripcionU;
+        
+        /// <summary>
         /// ckbactivo control.
         /// </summary>
         /// <remarks>
@@ -119,6 +128,24 @@ namespace ProyectoAdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescripcionAdd;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
+        /// txtDescripcionUAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDescripcionUAdd;
         
         /// <summary>
         /// ckbActivoAdd control.

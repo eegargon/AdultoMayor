@@ -23,29 +23,41 @@
                         <label for="contenido_txtNoUNidad">NUMERO DE UNIDAD</label>
                         <input type="text" class="form-control" id="txtNoUNidad" runat="server" readonly >         
                         </div> 
+                         <div class="form-group">
+                        <label for="contenido_txtMunicipio">SELECCIONE UN MUNICIPIO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtMunicipio" runat="server" CssClass="form-control" >
+                        </asp:DropDownList>
+                        </div>  
                         <div class="form-group">
-                        <label for="contenido_txtMunicipio">NOMBRE DEL MUNICIPIO</label>
-                        <input type="text" class="form-control" id="txtMunicipio" runat="server" readonly >         
-                        </div> 
+                        <label for="contenido_txtDepartamento">SELECCIONE EL DEPARTAMENTO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtDepartamento" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                        </div>           
                         <div class="form-group">
-                        <label for="contenido_txtDepartamento">NOMBRE DEL DEPARTAMENTO</label>
-                        <input type="text" class="form-control" id="txtDepartamento" runat="server" readonly >         
-                        </div> 
+                        <label for="contenido_txtAsociacion">SELECCIONE UNA ASOCIACION</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtAsociacion" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                        </div>                              
                         <div class="form-group">
-                        <label for="contenido_txtAsociacion">TIPO DE ASOCIACION</label>
-                        <input type="text" class="form-control" id="txtAsociacion" runat="server" readonly >         
-                        </div> 
+                        <label for="contenido_txtRuta">SELECCIONE UNA RUTA</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtRuta" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                        </div>                              
                         <div class="form-group">
-                        <label for="contenido_txtRuta">NOMBRE DE LA RUTA</label>
-                        <input type="text" class="form-control" id="txtRuta" runat="server" readonly >         
-                        </div> 
+                        <label for="contenido_txtCUIPropietario">SELECCIONE UN CUI DE PROPIETARIO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtCUIPropietario" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                        </div>                              
                         <div class="form-group">
-                        <label for="contenido_txtCUIPropietario">NUMERO DE CUI DEL PROPIETARIO</label>
-                        <input type="text" class="form-control" id="txtCUIPropietario" runat="server" readonly >         
-                        </div> 
-                        <div class="form-group">
-                        <label for="contenido_txtCuiPiloto">NUMERO DE CUI DEL PILOTO</label>
-                        <input type="text" class="form-control" id="txtCuiPiloto" runat="server" readonly >         
+                        <label for="contenido_txtCuiPiloto">SELECCIONE UN CUI DE PILOTO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtCuiPiloto" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
                         </div> 
                         <div class="form-group">
                         <label for="contenido_txtNoAfiliacion">NUMERO DE AFILIACION</label>
@@ -80,7 +92,7 @@
                         <input type="text" class="form-control" id="txtModelo" runat="server" >         
                         </div>        
                         <div class="form-group">
-                        <label for="contenido_txtAno">ANO DEL BUS</label>
+                        <label for="contenido_txtAno">A&Ntilde;O DEL BUS</label>
                         <input type="text" class="form-control" id="txtAno" runat="server" >         
                         </div>        
                         <div class="form-group">
@@ -126,35 +138,7 @@
                         <div class="form-group">
                         <label for="contenido_txtSIM">NUMERO DE SIM</label>
                         <input type="text" class="form-control" id="txtSIM" runat="server" >         
-                        </div>        
-                        <div class="form-group">
-                        <label for="contenido_txtCampo1">CAMPO 1</label>
-                        <input type="text" class="form-control" id="txtCampo1" runat="server" >         
-                        </div>       
-                         <div class="form-group">
-                        <label for="contenido_txtCampo2">CAMPO 2</label>
-                        <input type="text" class="form-control" id="txtCampo2" runat="server" >         
-                        </div>     
-                         <div class="form-group">
-                        <label for="contenido_txtCampo3">CAMPO 3</label>
-                        <input type="text" class="form-control" id="txtCampo3" runat="server" >         
-                        </div>     
-                         <div class="form-group">
-                        <label for="contenido_txtCampo4">CAMPO 4</label>
-                        <input type="text" class="form-control" id="txtCampo4" runat="server" >         
-                        </div>     
-                         <div class="form-group">
-                        <label for="contenido_txtCampo5">CAMPO 5</label>
-                        <input type="text" class="form-control" id="txtCampo5" runat="server" >         
-                        </div>     
-                         <div class="form-group">
-                        <label for="contenido_txtCampo6">CAMPO 6</label>
-                        <input type="text" class="form-control" id="txtCampo6" runat="server" >         
-                        </div>     
-                         <div class="form-group">
-                        <label for="contenido_txtCampo7">CAMPO 7</label>
-                        <input type="text" class="form-control" id="txtCampo7" runat="server" >         
-                        </div>     
+                        </div>                              
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="ckbactive" runat="server">
                         <label class="form-check-label" for="contenido_ckbactive">ACTIVO</label>
@@ -163,7 +147,7 @@
                         <br />
                         <asp:Button ID="btnEliminar" runat="server" CommandArgument='<%# Eval("NoUNidad") %>' Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminar_Click" OnClientClick="return checkDelete()"/>
                         <asp:Button ID="btnCancelarEdit" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
-                        <asp:Button ID="btnModificar" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificar_Click" />
+                        <asp:Button ID="btnModificarNoUNidad" runat="server"  Text="Guardar Cambios" CssClass="btn btn-success" OnClick="btnModificarNoUNidad_Click" />
                      </div>
                     </div>
                 </div>
@@ -184,17 +168,23 @@
   <Scripts>  
     <asp:ScriptReference Name="jquery"/>  
   </Scripts>  
-</asp:ScriptManager>     
-                         <div class="form-group">
-                        <label for="Municipio">SELECCIONE UN MUNICIPIO</label>
+</asp:ScriptManager>    
+                        <div class="form-group">
+                        <label for="contenido_txtNoUNidadAdd">INGRESE EL NUMERO DE UNIDAD</label>
                         &nbsp;
-                        <asp:DropDownList ID="txtMunicipalityCodeAdd" runat="server" CssClass="form-control">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNoUNidadAdd" ErrorMessage="EL CAMPO PIN DE ACCESO ES OBLIGATORIO"></asp:RequiredFieldValidator>
+                        <input type="text" class="form-control" id="txtNoUNidadAdd" runat="server" placeholder="INGRESE EL NUMERO DE UNIDAD">
+                        </div> 
+                         <div class="form-group">
+                        <label for="contenido_txtMunicipioAdd">SELECCIONE UN MUNICIPIO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtMunicipioAdd" runat="server" CssClass="form-control" >
                         </asp:DropDownList>
                         </div>  
                         <div class="form-group">
-                        <label for="Departamento">SELECCIONE EL DEPARTAMENTO</label>
+                        <label for="contenido_txtDepartamentoAdd">SELECCIONE EL DEPARTAMENTO</label>
                         &nbsp;
-                        <asp:DropDownList ID="txtdepartmentcodeAdd" runat="server" CssClass="form-control">
+                        <asp:DropDownList ID="txtDepartamentoAdd" runat="server" CssClass="form-control">
                         </asp:DropDownList>
                         </div>           
                         <div class="form-group">
@@ -212,13 +202,13 @@
                         <div class="form-group">
                         <label for="CUIPropietario">SELECCIONE UN CUI DE PROPIETARIO</label>
                         &nbsp;
-                        <asp:DropDownList ID="txtCUIAdd" runat="server" CssClass="form-control">
+                        <asp:DropDownList ID="txtCUIPropietarioAdd" runat="server" CssClass="form-control">
                         </asp:DropDownList>
                         </div>                              
                         <div class="form-group">
                         <label for="CuiPiloto">SELECCIONE UN CUI DE PILOTO</label>
                         &nbsp;
-                        <asp:DropDownList ID="txtCUIAdd1" runat="server" CssClass="form-control">
+                        <asp:DropDownList ID="txtCuiPilotoAdd" runat="server" CssClass="form-control">
                         </asp:DropDownList>
                         </div>                              
                             <div class="form-group">
@@ -270,10 +260,10 @@
                         <input type="text" class="form-control" id="txtModeloAdd" runat="server" placeholder="INGRESE EL MODELO DEL BUS">
                         </div>  
                            <div class="form-group">
-                        <label for="txtAnoAdd">INGRESE EL ANO DEL BUS</label>
+                        <label for="txtAnoAdd">INGRESE EL A&Ntilde;O DEL BUS</label>
                         &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtAnoAdd" ErrorMessage="EL ANO DEL BUS ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtAnoAdd" runat="server" placeholder="INGRESE ANO DEL BUS">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtAnoAdd" ErrorMessage="EL A&Ntilde;O DEL BUS ES OBLIGATORIO"></asp:RequiredFieldValidator>
+                        <input type="text" class="form-control" id="txtAnoAdd" runat="server" placeholder="INGRESE A&Ntilde;O DEL BUS">
                         </div>  
                            <div class="form-group">
                         <label for="txtColorAdd">INGRESE EL COLOR DEL BUS</label>
@@ -340,49 +330,7 @@
                         &nbsp;
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator26" runat="server" ControlToValidate="txtSIMAdd" ErrorMessage="EL NUMERO DE SIM ES OBLIGATORIO"></asp:RequiredFieldValidator>
                         <input type="text" class="form-control" id="txtSIMAdd" runat="server" placeholder="INGRESE EL NUMERO DE SIM">
-                        </div>  
-                           <div class="form-group">
-                        <label for="txtCampo1Add">INGRESE EL CAMPO 1</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator27" runat="server" ControlToValidate="txtCampo1Add" ErrorMessage="EL CAMPO 1 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo1Add" runat="server" placeholder="INGRESE EL CAMPO 1">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo2Add">INGRESE EL CAMPO 2</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator28" runat="server" ControlToValidate="txtCampo2Add" ErrorMessage="EL CAMPO 2 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo2Add" runat="server" placeholder="INGRESE EL CAMPO 2">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo3Add">INGRESE EL CAMPO 3</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator29" runat="server" ControlToValidate="txtCampo3Add" ErrorMessage="EL CAMPO 3 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo3Add" runat="server" placeholder="INGRESE EL CAMPO 3">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo4Add">INGRESE EL CAMPO 4</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator30" runat="server" ControlToValidate="txtCampo4Add" ErrorMessage="EL CAMPO 4 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo4Add" runat="server" placeholder="INGRESE EL CAMPO 4">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo5Add">INGRESE EL CAMPO 5</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator31" runat="server" ControlToValidate="txtCampo5Add" ErrorMessage="EL CAMPO 5 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo5Add" runat="server" placeholder="INGRESE EL CAMPO 5">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo6Add">INGRESE EL CAMPO 6</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator32" runat="server" ControlToValidate="txtCampo6Add" ErrorMessage="EL CAMPO 6 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo6Add" runat="server" placeholder="INGRESE EL CAMPO 6">
-                        </div>  
-                        <div class="form-group">
-                        <label for="txtCampo7Add">INGRESE EL CAMPO 7</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator33" runat="server" ControlToValidate="txtCampo7Add" ErrorMessage="EL CAMPO 7 ES OBLIGATORIO"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtCampo7Add" runat="server" placeholder="INGRESE EL CAMPO 7">
-                        </div>  
+                        </div>                             
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="ckbactiveAdd" runat="server">
                         <label class="form-check-label" for="contenido_ckbactiveAdd">ACTIVO</label>
@@ -390,7 +338,7 @@
                         </div>
                         <br />
                             <asp:Button ID="btnCancelarAdd" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
-                            <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" CssClass="btn btn-primary"/>
+                            <asp:Button ID="btnAgregarNoUNidad" runat="server" OnClick="btnAgregarNoUNidad_Click" Text="Agregar" CssClass="btn btn-primary"/>
                     </div>
                 </div>
             </div>
@@ -406,7 +354,7 @@
                 <p>
                     <a href="/admin/frmTblBuses.aspx?cmd=add" class="btn btn-success">AGREGAR BUSES</a>
                 </p>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"  CssClass="table table-bordered table-condensed table-striped" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
                     <Columns>
                         <asp:BoundField DataField="NoUNidad" HeaderText="NUMERO DE UNIDAD" />
                         <asp:BoundField DataField="Municipio" HeaderText="MUNICIPIO" />
@@ -423,7 +371,7 @@
                         <asp:BoundField DataField="RegularoSuplente" HeaderText="REGULAR O SUPLENTE" />
                         <asp:BoundField DataField="Marca" HeaderText="MARCA DEL BUS" />
                         <asp:BoundField DataField="Modelo" HeaderText="MODELO DEL BUS" />
-                        <asp:BoundField DataField="Ano" HeaderText="ANO DEL BUS" />
+                        <asp:BoundField DataField="Ano" HeaderText="A&Ntilde;O DEL BUS" />
                         <asp:BoundField DataField="Color" HeaderText="COLOR DEL BUS" />
                         <asp:BoundField DataField="NoPlaca" HeaderText="NUMERO DE PLACA" />
                         <asp:BoundField DataField="NoPasajeros" HeaderText="NUMERO DE PASAJEROS" />
@@ -435,13 +383,6 @@
                         <asp:BoundField DataField="EstadoVehiculo" HeaderText="ESTADO DEL VEHICULO" />
                         <asp:BoundField DataField="ComentariosInstalacion" HeaderText="COMENTARIOS SOBRE LA INSTALACION" />
                         <asp:BoundField DataField="SIM" HeaderText="SIM" />
-                        <asp:BoundField DataField="Campo1" HeaderText="CAMPO 1" />
-                        <asp:BoundField DataField="Campo2" HeaderText="CAMPO 2" />
-                        <asp:BoundField DataField="Campo3" HeaderText="CAMPO 3" />
-                        <asp:BoundField DataField="Campo4" HeaderText="CAMPO 4" />
-                        <asp:BoundField DataField="Campo5" HeaderText="CAMPO 5" />
-                        <asp:BoundField DataField="Campo6" HeaderText="CAMPO 6" />
-                        <asp:BoundField DataField="Campo7" HeaderText="CAMPO 7" />
                         <asp:BoundField DataField="Activo" HeaderText="ACTIVO" />
                         <asp:CommandField ShowSelectButton="True" SelectText="GESTIONAR"  />
                     </Columns>

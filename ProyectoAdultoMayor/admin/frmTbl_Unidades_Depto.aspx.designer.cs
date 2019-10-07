@@ -172,7 +172,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtDeptoAdd;
+        protected global::System.Web.UI.WebControls.DropDownList txtDeptoAdd;
         
         /// <summary>
         /// txtMuniAdd control.
@@ -181,7 +181,7 @@ namespace ProyectoAdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMuniAdd;
+        protected global::System.Web.UI.WebControls.DropDownList txtMuniAdd;
         
         /// <summary>
         /// txtOrderInstalacionAdd control.

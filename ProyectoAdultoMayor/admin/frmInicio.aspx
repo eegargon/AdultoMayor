@@ -93,7 +93,17 @@
 			<div class="icono">
 			<a href="/admin/frmTblTabletBus.aspx">TABLET BUS</a>			
 			</div>
-		</div>                  
+		</div> 
+        <div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="icono">
+			<a href="/admin/frmTblFoto.aspx">FOTO</a>			
+			</div>
+		</div>        
+        <div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="icono">
+			<a href="/admin/frmusers.aspx">ROLES DE USUARIO</a>			
+			</div>
+		</div>
 		<div class="col-md-3 col-sm-4 col-xs-6">
 			<div class="icono">
 			<a href="/admin/frmLogout.aspx">SALIR</a>			

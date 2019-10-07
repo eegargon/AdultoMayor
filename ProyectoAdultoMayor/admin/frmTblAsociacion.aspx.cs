@@ -33,12 +33,13 @@ namespace ProyectoAdultoMayor
             da.Fill(dt);
             txtAsociacion.Value = dt.Rows[0]["Asociacion"].ToString();
             txtDescripcion.Value = dt.Rows[0]["Descripcion"].ToString();
+            txtDescripcionU.Value = dt.Rows[0]["DescripcionU"].ToString();
             ckbactivo.Checked = dt.Rows[0]["Activo"].ToString().Equals("True");
         }
 
         private void BindTable()
         {
-            OdbcDataAdapter da = new OdbcDataAdapter("SELECT Asociacion, Descripcion,  iif(activo=0, 'NO', 'SI') activo FROM TBL_Asociacion ", Utilities.ObtenerCadenaConexion());
+            OdbcDataAdapter da = new OdbcDataAdapter("SELECT Asociacion, Descripcion, DescripcionU,  iif(activo=0, 'NO', 'SI') activo FROM TBL_Asociacion ", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
             GridView1.DataSource = dt;
@@ -59,6 +60,7 @@ namespace ProyectoAdultoMayor
         {
             string Asociacion = (Request.Form["ctl00$contenido$txtAsociacion"] != null)?Request.Form["ctl00$contenido$txtAsociacion"].ToString():"";
             string Descripcion = (Request.Form["ctl00$contenido$txtDescripcion"] != null)?Request.Form["ctl00$contenido$txtDescripcion"].ToString():"";
+            string DescripcionU = (Request.Form["ctl00$contenido$txtDescripcionU"] != null)?Request.Form["ctl00$contenido$txtDescripcionU"].ToString():"";
             string Activo = (Request.Form["ctl00$contenido$ckbActivo"] != null)?Request.Form["ctl00$contenido$ckbActivo"].ToString():"";
 
             OdbcCommand cmd = new OdbcCommand();
@@ -66,11 +68,13 @@ namespace ProyectoAdultoMayor
                                     TBL_ASOCIACION 
                                 SET 
                                     Descripcion=?,
+                                    DescripcionU=?,
                                     Activo=?
                                 WHERE
                                     Asociacion=?
                                 ";
             cmd.Parameters.Add(new OdbcParameter("Descripcion", Descripcion));
+            cmd.Parameters.Add(new OdbcParameter("DescripcionU", DescripcionU));
             cmd.Parameters.Add(new OdbcParameter("Activo", (Activo == "on") ? 1 : 0));
             cmd.Parameters.Add(new OdbcParameter("Asociacion", Asociacion));
 
@@ -135,9 +139,10 @@ namespace ProyectoAdultoMayor
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "INSERT INTO Tbl_ASOCIACION (Asociacion, Descripcion, Activo) VALUES (?,?,?)";
+                cmd.CommandText = "INSERT INTO Tbl_ASOCIACION (Asociacion, Descripcion, DescripcionU, Activo) VALUES (?,?,?,?)";
                 cmd.Parameters.Add("@Asociacion", OdbcType.VarChar).Value = txtAsociacionAdd.Value;
                 cmd.Parameters.Add("@Descripcion", OdbcType.VarChar).Value = txtDescripcionAdd.Value;
+                cmd.Parameters.Add("@DescripcionU", OdbcType.VarChar).Value = txtDescripcionUAdd.Value;
                 cmd.Parameters.Add("@Activo", OdbcType.Bit).Value = ckbActivoAdd.Checked;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();

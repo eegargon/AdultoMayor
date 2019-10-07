@@ -56,21 +56,18 @@
     <asp:ScriptReference Name="jquery"/>  
   </Scripts>  
 </asp:ScriptManager>     
-                         <div class="form-group">
-                        <label for="txtnombreproductoAdd">INGRESE EL NOMBRE DEL PRODUCTO</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtnombreproductoAdd" ErrorMessage="EL CAMPO NOMBRE DEL PRODUCTO ES OBLIGATORIO"></asp:RequiredFieldValidator>
+                        <div class="form-group">                       
+                        <label for="txtnombreproductoAdd">INGRESE EL NOMBRE DEL PRODUCTO</label>                    
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtnombreproductoAdd" ErrorMessage="EL CAMPO NOMBRE DEL PRODUCTO ES OBLIGATORIO"></asp:RequiredFieldValidator>
                         <input type="text" class="form-control" id="txtnombreproductoAdd" runat="server" placeholder="INGRESE EL NOMBRE DEL PRODUCTO">
                         </div>    
-                         <div class="form-group">
-                        <label for="txtprecioAdd">INGRESE EL PRECIO</label>
-                        &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtprecioAdd" ErrorMessage="EL CAMPO PRECIO ES OBLIGATORIO"></asp:RequiredFieldValidator>
+                        <div class="form-group">
+                        <label for="txtprecioAdd">INGRESE EL PRECIO</label>&nbsp;&nbsp;&nbsp;                        
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtprecioAdd" ErrorMessage="EL CAMPO PRECIO ES OBLIGATORIO"></asp:RequiredFieldValidator>
                         <input type="text" class="form-control" id="txtprecioAdd" runat="server" placeholder="INGRESE EL PRECIO DEL USUARIO">
-                        </div>                                   
-                        <br />
-                            <asp:Button ID="btnCancelarAdd" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
-                            <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" CssClass="btn btn-primary"/>
+                        </div>                                                           
+                        <asp:Button ID="btnCancelarAdd" runat="server"  Text="Cancelar" CssClass="btn btn-default" OnClick="btnCancelarEdicion_Click" />
+                        <asp:Button ID="btnAgregar" runat="server" OnClick="btnAgregar_Click" Text="Agregar" CssClass="btn btn-primary"/>
                     </div>
                 </div>
             </div>

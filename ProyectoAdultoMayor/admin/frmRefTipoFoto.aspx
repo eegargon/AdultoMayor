@@ -64,10 +64,10 @@
                             <input type="text" class="form-control" id="txtCodTipoFotoAdd"  runat="server" placeholder="Ingresar el C&oacute;digo">
                         </div>
                         <div class="form-group">
-                        <label for="Descripcion">TIPO DE FOTO</label>
+                        <label for="txtTipoFoto">TIPO DE FOTO</label>
                         &nbsp;
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTipoFotoAdd" ErrorMessage="El campo Tipo de Foto es obligatorio"></asp:RequiredFieldValidator>
-                        <input type="text" class="form-control" id="txtTipoFotoAdd" runat="server" placeholder="Ingresar la Descripci&oacute;n">         
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTipoFotoAdd" ErrorMessage="El campo Tipo de Foto es obligatorio"></asp:RequiredFieldValidator>
+                        <input type="text" class="form-control" id="txtTipoFotoAdd"  runat="server" placeholder="Ingresar el C&oacute;digo">
                         </div>         
                         <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="ckbActivoAdd" runat="server">

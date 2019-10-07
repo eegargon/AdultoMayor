@@ -22,6 +22,13 @@ namespace ProyectoAdultoMayor
             {
                 LoadData();
             }
+
+            if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Agregar)
+            {
+                CargarDepto();
+                CargarMuni();
+            }
+
         }
 
         private void LoadData()
@@ -56,6 +63,39 @@ namespace ProyectoAdultoMayor
             string Cod = row.Cells[0].Text;
 
             Response.Redirect("~/admin/frmTbl_Unidades_Depto.aspx?cmd=edit&Cod=" + Cod);
+        }
+
+        private void CargarDepto()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT
+                                                            departmentcode, 
+                                                            departmentname, 
+                                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+                                                        FROM REF_DEPTOS
+                                                        WHERE active = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtDeptoAdd.DataValueField = "departmentcode";
+            txtDeptoAdd.DataTextField = "departmentname";
+            txtDeptoAdd.DataSource = dt;
+            txtDeptoAdd.DataBind();
+        }
+
+        private void CargarMuni()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"SELECT	MUNICIPALITYCODE, 
+		                                            MUNICIPALITYNAME, 
+		                                            iif(active IS NULL OR active=0, 'NO', 'SI') active 
+		                                            FROM REF_MUNIS
+		                                            WHERE active = 1
+                                                    ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtMuniAdd.DataValueField = "MUNICIPALITYCODE";
+            txtMuniAdd.DataTextField = "MUNICIPALITYNAME";
+            txtMuniAdd.DataSource = dt;
+            txtMuniAdd.DataBind();
         }
 
         protected void btnModificarUnidadesDepto_Click(object sender, EventArgs e)
@@ -156,8 +196,8 @@ namespace ProyectoAdultoMayor
                 cmd.Parameters.Add("@Cod", OdbcType.VarChar).Value = txtCodAdd.Value;
                 cmd.Parameters.Add("@Cantidad", OdbcType.VarChar).Value = txtCantidadAdd.Value;
                 cmd.Parameters.Add("@Asociacion", OdbcType.VarChar).Value = txtAsociacionAdd.Value;
-                cmd.Parameters.Add("@Depto", OdbcType.VarChar).Value = txtDeptoAdd.Value;
-                cmd.Parameters.Add("@Muni", OdbcType.VarChar).Value = txtMuniAdd.Value;
+                cmd.Parameters.Add("@Depto", OdbcType.VarChar).Value = txtDeptoAdd.SelectedValue;
+                cmd.Parameters.Add("@Muni", OdbcType.VarChar).Value = txtMuniAdd.SelectedValue;
                 cmd.Parameters.Add("@OrderInstalacion", OdbcType.VarChar).Value = txtOrderInstalacionAdd.Value;
                 cmd.Parameters.Add("@Activo", OdbcType.Bit).Value = ckbActivoAdd.Checked;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());

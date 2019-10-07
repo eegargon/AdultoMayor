@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -31,7 +32,7 @@ namespace ProyectoAdultoMayor
             DataTable dt = new DataTable();
             da.Fill(dt);
             txtusername.Value = dt.Rows[0]["username"].ToString();
-            txtpassword.Value = dt.Rows[0]["password"].ToString();
+            txtpassword.Value = "---";//dt.Rows[0]["password"].ToString();
             txtroles.Value = dt.Rows[0]["roles"].ToString();
         }
 
@@ -68,12 +69,23 @@ namespace ProyectoAdultoMayor
             cmd.CommandText = @"UPDATE 
                                     users
                                 SET 
+                                    roles=?                                    
+                                WHERE
+                                    username=?
+                                ";
+            if (!password.Equals("---"))
+            {
+                cmd.CommandText = @"UPDATE 
+                                    users
+                                SET 
                                     password=?,
                                     roles=?                                    
                                 WHERE
                                     username=?
                                 ";
-            cmd.Parameters.Add(new OdbcParameter("password", password));
+                password = FormsAuthentication.HashPasswordForStoringInConfigFile(password, "SHA1");
+                cmd.Parameters.Add(new OdbcParameter("password", password));
+            }
             cmd.Parameters.Add(new OdbcParameter("roles", roles));
             cmd.Parameters.Add(new OdbcParameter("username", username));
             
@@ -141,7 +153,7 @@ namespace ProyectoAdultoMayor
             {
                 cmd.CommandText = "INSERT INTO users ( username, password, roles) VALUES (?,?,?)";
                 cmd.Parameters.Add("@username", OdbcType.VarChar).Value = txtusernameAdd.Value;
-                cmd.Parameters.Add("@password", OdbcType.VarChar).Value = txtpasswordAdd.Value;
+                cmd.Parameters.Add("@password", OdbcType.VarChar).Value = FormsAuthentication.HashPasswordForStoringInConfigFile(txtpasswordAdd.Value, "SHA1");
                 cmd.Parameters.Add("@roles", OdbcType.VarChar).Value = txtrolesAdd.Value;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();

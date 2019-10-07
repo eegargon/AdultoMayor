@@ -9,10 +9,8 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoAdultoMayor
 {
-    public partial class frmTbl_Foto: System.Web.UI.Page
+    public partial class frmTblFoto : System.Web.UI.Page
     {
-        private object txtNoUNidadAdd;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Listar)
@@ -24,63 +22,37 @@ namespace ProyectoAdultoMayor
             {
                 LoadData();
             }
+
             if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Agregar)
             {
                 CargarTipoFoto();
-
-            if (!IsPostBack && Utilities.ObtenerComandoActual(Request.QueryString["cmd"]) == Utilities.Comandos.Agregar)
-            {
-                CargarNoUNidad();
-                }
+                CargarUnidad();             
             }
-        }
-        private void CargarTipoFoto() 
 
-        {
-            OdbcDataAdapter da = new OdbcDataAdapter(@"select CodTipoFoto, TipoFoto from REF_TIPO_FOTO where Activo=1 order by CodTipoFoto asc
-                                                    ", Utilities.ObtenerCadenaConexion());
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            txtTipoFotoAdd.DataTextField = "CodTipoFoto";
-            txtTipoFotoAdd.DataTextField = "TipoFoto";
-            txtTipoFotoAdd.DataSource = dt;
-            txtTipoFotoAdd.DataBind();
-        }
-        private void CargarNoUNidad()
-        {
-            OdbcDataAdapter da = new OdbcDataAdapter(@"select NoUNidad, NoUNidad as Numero from TBL_BUSES where Activo=1 order by NoUNidad asc
-                                                    ", Utilities.ObtenerCadenaConexion());
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            DropDownNoUnidadAdd.DataTextField = "NoUNidad";
-            DropDownNoUnidadAdd.DataTextField = "Numero";
-            DropDownNoUnidadAdd.DataSource = dt;
-            DropDownNoUnidadAdd.DataBind();
-        }
-
-        private void LoadData()
-        {
-            string IdFoto = Request.QueryString["IdFoto"];
-            OdbcDataAdapter da = new OdbcDataAdapter($@"SELECT * FROM TBL_FOTO WHERE IdFoto = '{IdFoto}' ", Utilities.ObtenerCadenaConexion());
-            DataTable dt = new DataTable();
-            da.Fill(dt);        
-
-            txtIdFoto.Value = dt.Rows[0]["IdFoto"].ToString();
-            txtUnidad.Value = dt.Rows[0]["Unidad"].ToString();
-            txtTipoFoto.Value = dt.Rows[0]["TipoFoto"].ToString();
-            txtImagen.Value = dt.Rows[0]["Imagen"].ToString();
-            ckbactive.Checked = dt.Rows[0]["Activo"].ToString().Equals("True");
         }
 
         private void BindTable()
         {
-            OdbcDataAdapter da = new OdbcDataAdapter("SELECT IdFoto, Unidad, TipoFoto, Imagen, iif(activo=0, 'NO', 'SI') activo FROM TBL_Foto ", Utilities.ObtenerCadenaConexion());
+            OdbcDataAdapter da = new OdbcDataAdapter("SELECT IdFoto, Unidad, TipoFoto, imagen,  iif(activo=0, 'NO', 'SI') activo FROM TBL_FOTO", Utilities.ObtenerCadenaConexion());
             DataTable dt = new DataTable();
             da.Fill(dt);
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
 
+        private void LoadData()
+        {
+            string IdFoto = Request.QueryString["IdFoto"];
+            OdbcDataAdapter da = new OdbcDataAdapter($@"SELECT * FROM TBL_FOTO WHERE IdFoto= '{IdFoto}' ", Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+           
+            txtIdFoto.Value = dt.Rows[0]["IdFoto"].ToString();
+            txtUnidad.Value = dt.Rows[0]["Unidad"].ToString();
+            txtTipoFoto.Value = dt.Rows[0]["TipoFoto"].ToString();
+            txtimagen.Value = dt.Rows[0]["imagen"].ToString();
+            ckbactivo.Checked = dt.Rows[0]["Activo"].ToString().Equals("True");
+        }
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
@@ -88,34 +60,63 @@ namespace ProyectoAdultoMayor
 
             string IdFoto = row.Cells[0].Text;
 
-            Response.Redirect("~/admin/frmTbl_Foto.aspx?cmd=edit&IdFoto=" + IdFoto);
+            Response.Redirect("~/admin/frmTblFoto.aspx?cmd=edit&IdFoto=" + IdFoto);
         }
+
+        private void CargarTipoFoto()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"select 
+		                                                    CodTipoFoto, TipoFoto, 
+		                                                    iif(Activo=0, 'NO', 'SI') active 
+		                                                    from REF_TIPO_FOTO where Activo = 1",
+                                                            Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);          
+            txtTipoFotoAdd.DataValueField = "CodTipoFoto";
+            txtTipoFotoAdd.DataTextField = "TipoFoto";
+            txtTipoFotoAdd.DataSource = dt;
+            txtTipoFotoAdd.DataBind();
+        }
+
+        private void CargarUnidad()
+        {
+            OdbcDataAdapter da = new OdbcDataAdapter(@"select 
+		                                                    NoUNidad, NoUNidad, 
+		                                                    iif(Activo=0, 'NO', 'SI') active 
+		                                                    from TBL_BUSES where Activo = 1",
+                                                            Utilities.ObtenerCadenaConexion());
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            txtUnidadAdd.DataValueField = "NoUNidad";
+            txtUnidadAdd.DataTextField = "NoUNidad";
+            txtUnidadAdd.DataSource = dt;
+            txtUnidadAdd.DataBind();
+        }
+             
 
         protected void btnModificarIdFoto_Click(object sender, EventArgs e)
         {
             string IdFoto = (Request.Form["ctl00$contenido$txtIdFoto"] != null) ? Request.Form["ctl00$contenido$txtIdFoto"].ToString() : "";
             string Unidad = (Request.Form["ctl00$contenido$txtUnidad"] != null) ? Request.Form["ctl00$contenido$txtUnidad"].ToString() : "";
             string TipoFoto = (Request.Form["ctl00$contenido$txtTipoFoto"] != null) ? Request.Form["ctl00$contenido$txtTipoFoto"].ToString() : "";
-            string Imagen = (Request.Form["ctl00$contenido$txtImagen"] != null) ? Request.Form["ctl00$contenido$txtImagen"].ToString() : "";
-            string active = (Request.Form["ctl00$contenido$ckbactive"] != null) ? Request.Form["ctl00$contenido$ckbactive"].ToString() : "";
+            string imagen = (Request.Form["ctl00$contenido$txtimagen"] != null) ? Request.Form["ctl00$contenido$txtimagen"].ToString() : "";
+            string Activo = (Request.Form["ctl00$contenido$ckbActivo"] != null) ? Request.Form["ctl00$contenido$ckbActivo"].ToString() : "";
 
             OdbcCommand cmd = new OdbcCommand();
             cmd.CommandText = @"UPDATE 
-                                    Tbl_Foto 
+                                    TBL_FOTO 
                                 SET 
-                                    IdFoto=?,
                                     Unidad=?,
                                     TipoFoto=?,
-                                    Imagen=?,
+                                    imagen=?,
                                     Activo=?
                                 WHERE
                                     IdFoto=?
                                 ";
-            cmd.Parameters.Add(new OdbcParameter("IdFoto", IdFoto));
             cmd.Parameters.Add(new OdbcParameter("Unidad", Unidad));
             cmd.Parameters.Add(new OdbcParameter("TipoFoto", TipoFoto));
-            cmd.Parameters.Add(new OdbcParameter("Imagen", Imagen));
-            cmd.Parameters.Add(new OdbcParameter("Activo", (active == "on") ? 1 : 0));
+            cmd.Parameters.Add(new OdbcParameter("imagen", imagen));
+            cmd.Parameters.Add(new OdbcParameter("Activo", (Activo == "on") ? 1 : 0));
             cmd.Parameters.Add(new OdbcParameter("IdFoto", IdFoto));
 
             cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
@@ -143,15 +144,15 @@ namespace ProyectoAdultoMayor
 
         private void IrAlListadoPrincipal()
         {
-            Response.Redirect("~/admin/frmTbl_Foto.aspx");
+            Response.Redirect("~/admin/frmTblFoto.aspx");
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "DELETE FROM Tbl_Foto WHERE IdFoto = ? ";
-                cmd.Parameters.Add("@IdFoto", OdbcType.VarChar).Value = txtIdFoto.Value;
+                cmd.CommandText = "DELETE FROM TBL_FOTO WHERE IdFoto= ? ";
+                cmd.Parameters.Add("@IdFoto", OdbcType.BigInt).Value = txtIdFoto.Value;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -179,11 +180,11 @@ namespace ProyectoAdultoMayor
             OdbcCommand cmd = new OdbcCommand();
             try
             {
-                cmd.CommandText = "INSERT INTO Tbl_Foto (Unidad, TipoFoto, Imagen, Activo) VALUES (?,?,?,?)";
-                cmd.Parameters.Add("@Unidad", OdbcType.VarChar).Value = DropDownNoUnidadAdd.SelectedValue;
-                cmd.Parameters.Add("@TipoFoto", OdbcType.VarChar).Value = txtTipoFotoAdd.SelectedValue;
-                cmd.Parameters.Add("@Imagen", OdbcType.VarChar).Value = txtImagenAdd.Value;
-                cmd.Parameters.Add("@Active", OdbcType.Bit).Value = ckbActiveAdd.Checked;
+                cmd.CommandText = "INSERT INTO TBL_FOTO (Unidad, TipoFoto, imagen, Activo) VALUES (?,?,?,?)";                
+                cmd.Parameters.Add("@Unidad", OdbcType.VarChar).Value = txtUnidadAdd.SelectedValue;
+                cmd.Parameters.Add("@TipoFoto", OdbcType.Int).Value = txtTipoFotoAdd.SelectedValue;
+                cmd.Parameters.Add("@imagen", OdbcType.VarChar).Value = txtimagenAdd.Value;
+                cmd.Parameters.Add("@Activo", OdbcType.Bit).Value = ckbActivoAdd.Checked;
                 cmd.Connection = new OdbcConnection(Utilities.ObtenerCadenaConexion());
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
@@ -192,7 +193,7 @@ namespace ProyectoAdultoMayor
                 IrAlListadoPrincipal();
             }
             catch (Exception ex)
-             {
+            {
                 Console.WriteLine(ex.Message);
                 if (cmd.Connection.State == System.Data.ConnectionState.Open)
                 {
@@ -201,10 +202,10 @@ namespace ProyectoAdultoMayor
             }
         }
 
-        protected void Valida_IdFoto(object source, ServerValidateEventArgs args)
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             args.IsValid = false;
-            if (args.Value.Length == 2 && EsNumerico(args.Value))
+            if (args.Value.Length == 13 && EsNumerico(args.Value))
             {
                 args.IsValid = true;
             }

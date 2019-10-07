@@ -42,8 +42,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buses <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/admin/frmTblPiloto.aspx">Pilotos</a></li>
-            <li><a href="/admin/frmTblPropietario.aspx">Propietarios</a></li>
-            <li role="separator" class="divider"></li>
+            <li><a href="/admin/frmTblPropietario.aspx">Propietarios</a></li>           
             <li><a href="/admin/frmTblRuta.aspx">Rutas</a></li>
           </ul>
         </li>
@@ -65,7 +64,7 @@
           </ul>
         </li>
             <li class="active"><a href="/admin/frmTblSim.aspx">SIM</a></li>
-            <li><a href="/admin/frmTbl_Foto.aspx">Foto</a></li> 
+            <li><a href="/admin/frmTblFoto.aspx">Foto</a></li> 
             <li><a href="/admin/frmLogout.aspx">Cerrar Sesión</a></li>
           </ul>
         </div><!--/.nav-collapse -->

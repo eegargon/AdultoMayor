@@ -88,15 +88,18 @@
                         <div class="form-group">
                         <label for="Asociacion">ASOCIACION</label>
                         <input type="text" class="form-control" id="txtAsociacionAdd" runat="server"  placeholder="INGRESAR LA ASOCIACION">
-                        </div>                        
+                        </div>    
                         <div class="form-group">
-                        <label for="Depto">DEPARTAMENTO</label>
-                        <input type="text" class="form-control" id="txtDeptoAdd" maxlength ="2" runat="server" placeholder="INGRESAR EL DEPARTAMENTO"/>
-                        </div>
+                        <label for="contenido_txtDeptoAdd">NOMBRE DEL DEPARTAMENTO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtDeptoAdd" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </div>     
                         <div class="form-group">
-                        <label for="Muni">MUNICIPIO</label>
-                        <input type="text" class="form-control" id="txtMuniAdd" maxlength ="2" runat="server" placeholder="INGRESAR EL MUNICIPIO"/>
-                        </div>
+                        <label for="contenido_txtMuniAdd">NOMBRE DEL MUNICIPIO</label>
+                        &nbsp;
+                        <asp:DropDownList ID="txtMuniAdd" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                        </div>       
                         <div class="form-group">
                         <label for="OrderInstalacion">ORDEN DE INSTALACION</label>
                         <input type="text" class="form-control" id="txtOrderInstalacionAdd" runat="server" placeholder="INGRESAR LA ORDEN DE INSTALACION"/>

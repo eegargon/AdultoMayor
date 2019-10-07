@@ -10,7 +10,7 @@
 namespace ProyectoAdultoMayor {
     
     
-    public partial class frmTbl_Foto {
+    public partial class frmTblFoto {
         
         /// <summary>
         /// form1 control.
@@ -20,15 +20,6 @@ namespace ProyectoAdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
-        /// txtUnidad1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUnidad1;
         
         /// <summary>
         /// txtIdFoto control.
@@ -58,22 +49,22 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtTipoFoto;
         
         /// <summary>
-        /// txtImagen control.
+        /// txtimagen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtImagen;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtimagen;
         
         /// <summary>
-        /// ckbactive control.
+        /// ckbactivo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox ckbactive;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox ckbactivo;
         
         /// <summary>
         /// btnEliminar control.
@@ -112,13 +103,13 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.ScriptManager sm1;
         
         /// <summary>
-        /// DropDownNoUnidadAdd control.
+        /// txtUnidadAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownNoUnidadAdd;
+        protected global::System.Web.UI.WebControls.DropDownList txtUnidadAdd;
         
         /// <summary>
         /// txtTipoFotoAdd control.
@@ -130,31 +121,31 @@ namespace ProyectoAdultoMayor {
         protected global::System.Web.UI.WebControls.DropDownList txtTipoFotoAdd;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// txtImagenAdd control.
+        /// txtimagenAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtImagenAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtimagenAdd;
         
         /// <summary>
-        /// ckbActiveAdd control.
+        /// ckbActivoAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox ckbActiveAdd;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox ckbActivoAdd;
         
         /// <summary>
         /// btnCancelarAdd control.

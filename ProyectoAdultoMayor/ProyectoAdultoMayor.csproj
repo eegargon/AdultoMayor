@@ -90,9 +90,9 @@
     <Content Include="admin\frmTblTabletBus.aspx" />
     <Content Include="admin\frmTblTransaccion.aspx" />
     <Content Include="admin\frmTblUser.aspx" />
-    <Content Include="admin\frmTbl_Foto.aspx" />
     <Content Include="admin\frmTbl_Unidades_Depto.aspx" />
     <Content Include="admin\frmusers.aspx" />
+    <Content Include="admin\frmTblFoto.aspx" />
     <Content Include="Global.asax" />
     <Content Include="thirdparties\twitterbootstrap\css\bootstrap-theme.css" />
     <Content Include="thirdparties\twitterbootstrap\css\bootstrap-theme.min.css" />
@@ -270,13 +270,6 @@
     <Compile Include="admin\frmTblUser.aspx.designer.cs">
       <DependentUpon>frmTblUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\frmTbl_Foto.aspx.cs">
-      <DependentUpon>frmTbl_Foto.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\frmTbl_Foto.aspx.designer.cs">
-      <DependentUpon>frmTbl_Foto.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\frmTbl_Unidades_Depto.aspx.cs">
       <DependentUpon>frmTbl_Unidades_Depto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -290,6 +283,13 @@
     </Compile>
     <Compile Include="admin\frmusers.aspx.designer.cs">
       <DependentUpon>frmusers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\frmTblFoto.aspx.cs">
+      <DependentUpon>frmTblFoto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\frmTblFoto.aspx.designer.cs">
+      <DependentUpon>frmTblFoto.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
